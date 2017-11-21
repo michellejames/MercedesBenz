@@ -4,6 +4,67 @@
   font-weight: normal;
   src: local("Korolev Light"), url("../../assets/font/KorolevLight.woff") format("woff"); }
 
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+  color: #FEFEFE;
+  margin-bottom: 4rem; }
+  footer .footer__text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    @media screen and (min-width: 630px) {
+      footer .footer__text {
+        flex-direction: row;
+        align-items: flex-start;
+        flex-wrap: flex-wrap; } }
+    footer .footer__text a {
+      text-decoration: none;
+      font-size: .8rem;
+      color: #FEFEFE; }
+    footer .footer__text .mbs-logo__footer {
+      background-image: url(../../assets/img/mbs-logo.svg);
+      background-repeat: no-repeat;
+      width: 40%;
+      height: 120px; }
+      @media screen and (min-width: 630px) {
+        footer .footer__text .mbs-logo__footer {
+          width: 25%; } }
+    footer .footer__text .sitemap,
+    footer .footer__text .teams,
+    footer .footer__text .social-media {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2rem;
+      letter-spacing: 1px;
+      line-height: 1.5; }
+      @media screen and (min-width: 630px) {
+        footer .footer__text .sitemap,
+        footer .footer__text .teams,
+        footer .footer__text .social-media {
+          width: 25%; } }
+      footer .footer__text .sitemap li,
+      footer .footer__text .teams li,
+      footer .footer__text .social-media li {
+        width: 100%;
+        text-align: center; }
+      footer .footer__text .sitemap h3,
+      footer .footer__text .teams h3,
+      footer .footer__text .social-media h3 {
+        z-index: 5;
+        margin-bottom: 1.5rem;
+        font-weight: bold; }
+      footer .footer__text .sitemap span,
+      footer .footer__text .teams span,
+      footer .footer__text .social-media span {
+        margin-right: 2%; }
+  footer .copyright {
+    font-size: .6rem; }
+
 * {
   box-sizing: border-box; }
 
@@ -37,7 +98,7 @@ header {
           width: 100%; }
           header .header__nav ul a {
             text-decoration: none;
-            color: #fff;
+            color: #FEFEFE;
             font-size: 1rem;
             font-weight: 100;
             font-family: 'Korolev Light';
@@ -52,7 +113,7 @@ header {
         header .header__subnav ul {
           display: flex; } }
   header .hamburger__menu {
-    color: #fff;
+    color: #FEFEFE;
     text-transform: uppercase;
     font-weight: 100;
     font-size: .8rem; }
@@ -75,7 +136,7 @@ header {
   text-align: center;
   background: linear-gradient(180deg, rgba(0, 22, 34, 0.36) 0, #001622);
   padding: 1rem;
-  color: #fff;
+  color: #FEFEFE;
   position: absolute;
   bottom: 0; }
   .hero__infowindow h2 {
@@ -86,7 +147,7 @@ header {
     margin-bottom: 1rem; }
   .hero__infowindow a {
     text-decoration: none;
-    color: #fff;
+    color: #FEFEFE;
     text-transform: uppercase;
     padding-bottom: 6px;
     border-bottom: 1px solid #A51C33; }
@@ -97,7 +158,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #fff; }
+  color: #FEFEFE; }
   .inside h2 {
     font-size: 2em;
     margin-bottom: 1rem; }
