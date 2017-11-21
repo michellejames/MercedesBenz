@@ -1,0 +1,13 @@
+$blue: #011622;
+$white: #fff;
+$red: #A51C33;
+
+$med-break: 900px;
+$lg-break: 1000px;
+
+@font-face {
+	font-family: 'Korolev Light';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Korolev Light'), url('../../assets/font/KorolevLight.woff') format('woff');
+}

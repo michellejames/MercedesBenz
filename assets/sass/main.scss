@@ -1,0 +1,151 @@
+@import "variables";
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: $blue;
+	font-family: 'Korolev Light';
+}
+
+header {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 5% 3%;
+
+	@media screen and (min-width: $med-break) {
+		justify-content: flex-start;
+
+		padding: 1% 2%;
+	}
+
+	.header__logo {
+		background-image: url(../../assets/img/mbs-logo.svg);
+		background-repeat: no-repeat;
+		width: 80px;
+		height: 50px;
+		margin-right: 5%;
+	}
+
+	.header__nav {
+		display: none;
+
+		@media screen and (min-width: $med-break) {
+			display: flex;
+
+			& ul {
+				display: flex;
+				width: 100%;
+
+				& a {
+					text-decoration: none;
+					color: $white;
+					font-size: 1rem;
+					font-weight: 100;
+					font-family: 'Korolev Light';
+					text-transform: uppercase;
+					margin: 7%;
+				}
+			}
+		}
+	}
+
+	.header__subnav {
+		display: none;
+
+		@media screen and (min-width: $lg-break) {
+			display: flex;
+			margin-left: auto;
+
+			& ul {
+				display: flex;
+			}
+		}
+	}
+
+	.hamburger__menu {
+		color: $white;
+		text-transform: uppercase;
+		font-weight: 100;
+		font-size: .8rem;
+
+		@media screen and (min-width: $med-break) {
+			display: none;
+		}
+	}
+}
+
+.hero {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.item {
+
+	& img {
+		max-height: 300px;
+	}
+}
+
+.hero__infowindow {
+	z-index: 500;
+	width: 90%;
+	text-align: center;
+    background: linear-gradient(180deg,rgba(0,22,34,.36) 0,#001622);
+    padding: 1rem;
+	color: $white;
+	position: absolute;
+	bottom: 0;
+
+	& h2 {
+		font-size: 1.5em;
+		margin-bottom: 1rem;
+	}
+
+	& h4 {
+		font-size: .8em;
+		margin-bottom: 1rem;
+	}
+
+	& a {
+		text-decoration: none;
+		color: $white;
+		text-transform: uppercase;
+		padding-bottom: 6px;
+		border-bottom: 1px solid $red;
+
+		&:hover {
+			border-bottom: 4px solid $red;
+		}
+	}
+}
+
+.inside {
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: $white;
+
+	& h2 {
+		font-size: 2em;
+		margin-bottom: 1rem;
+	}
+
+	& span {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+
+	video {
+		width: 100%;
+	}
+}
+
+
+
