@@ -1,3 +1,4 @@
+
 // $angle: The angle in degrees: 1 - 45
 // $angle-position-y: The Y position of the angle: top | bottom | both
 // $angle-position-x: The X position of the angle: left | right
@@ -167,8 +168,10 @@
   padding: 10% 0;
 }
 
-.angle--both-left-left {
-  @include angle-edge($angle: 3, $angle-position-y: 'both', $angle-position-x: 'left');
+.angle--top-left {
+  @include angle-edge($angle: 2, $angle-position-y: 'top', $angle-position-x: 'left');
+	//margin-top: 10%;
+	border-bottom: 3px solid $white;
 }
 
 .angle__content {
@@ -179,90 +182,88 @@
 	background-position: top;
 }
 
-.footer__content {
-	background: $white;
-	background-image: none;
-	height: 50vh;
 
+
+
+
+
+
+
+
+
+
+
+//Header Styling
+
+header {
+	margin-top: 25px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5% 3%;
+
+	.header__logo {
+		background-image: url(../../assets/img/mbs-logo.svg);
+		background-repeat: no-repeat;
+		width: 80px;
+		height: 50px;
+		margin-right: 5%;
+  	}
+
+	.header__nav, .header__subnav {
+		display: none;
+	}
+
+	.hamburger__menu {
+		color: #fff;
+		text-transform: uppercase;
+		font-weight: 100;
+		font-size: .8rem;
+	}
+
+	@media screen and (min-width: 900px) {
+		justify-content: flex-start;
+		padding: 1% 2%;
+	}
 }
 
 
 
+@media screen and (min-width: 900px) {
+  header .header__nav {
+    display: flex;
 
+    ul {
+      display: flex;
+      width: 100%;
 
+      a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 100;
+        font-family: 'Korolev Light';
+        text-transform: uppercase;
+        margin: 7%;
+      }
+    }
+  }
+}
 
+@media screen and (min-width: 1000px) {
+  header .header__subnav {
+    display: flex;
+    margin-left: auto;
 
-// Footer Styling
+    ul {
+      display: flex;
+    }
+  }
+}
 
-footer {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-transform: uppercase;
-	color: $white;
-	margin-bottom: 4rem;
-
-	.footer__text {
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-
-		@media screen and (min-width: $sm-break) {
-			flex-direction: row;
-			align-items: flex-start;
-			flex-wrap: flex-wrap;
-		}
-
-		& a {
-			text-decoration: none;
-			font-size: .8rem;
-			color: $white;
-		}
-
-		.mbs-logo__footer {
-			background-image: url(../../assets/img/mbs-logo.svg);
-			background-repeat: no-repeat;
-			width: 40%;
-			height: 120px;
-
-			@media screen and (min-width: $sm-break) {
-				width: 25%;
-			}
-		}
-
-		.sitemap,
-		.teams,
-		.social-media {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			margin-bottom: 2rem;
-			letter-spacing: 1px;
-			line-height: 1.5;
-
-		@media screen and (min-width: $sm-break) {
-			width: 25%;
-		}
-
-			& li {
-					width: 100%;
-					text-align: center;
-			}
-
-			& h3 {
-				z-index: 5;
-				margin-bottom: 1.5rem;
-				font-weight: bold;
-			}
-
-			& span {
-				margin-right: 2%;
-			}
-		}
-	}
-
-	.copyright {
-		font-size: .6rem;
-	}
+@media screen and (min-width: 900px) {
+  header .hamburger__menu {
+    display: none;
+  }
 }

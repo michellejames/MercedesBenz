@@ -1,4 +1,7 @@
 @import "variables";
+
+@import "header";
+@import "sponsor";
 @import "footer";
 
 * {
@@ -10,74 +13,74 @@ body {
 	font-family: 'Korolev Light';
 }
 
-header {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 5% 3%;
+// header {
+// 	width: 100%;
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: space-between;
+// 	padding: 5% 3%;
 
-	@media screen and (min-width: $med-break) {
-		justify-content: flex-start;
+// 	@media screen and (min-width: $med-break) {
+// 		justify-content: flex-start;
 
-		padding: 1% 2%;
-	}
+// 		padding: 1% 2%;
+// 	}
 
-	.header__logo {
-		background-image: url(../../assets/img/mbs-logo.svg);
-		background-repeat: no-repeat;
-		width: 80px;
-		height: 50px;
-		margin-right: 5%;
-	}
+// 	.header__logo {
+// 		background-image: url(../../assets/img/mbs-logo.svg);
+// 		background-repeat: no-repeat;
+// 		width: 80px;
+// 		height: 50px;
+// 		margin-right: 5%;
+// 	}
 
-	.header__nav {
-		display: none;
+// 	.header__nav {
+// 		display: none;
 
-		@media screen and (min-width: $med-break) {
-			display: flex;
+// 		@media screen and (min-width: $med-break) {
+// 			display: flex;
 
-			& ul {
-				display: flex;
-				width: 100%;
+// 			& ul {
+// 				display: flex;
+// 				width: 100%;
 
-				& a {
-					text-decoration: none;
-					color: $white;
-					font-size: 1rem;
-					font-weight: 100;
-					font-family: 'Korolev Light';
-					text-transform: uppercase;
-					margin: 7%;
-				}
-			}
-		}
-	}
+// 				& a {
+// 					text-decoration: none;
+// 					color: $white;
+// 					font-size: 1rem;
+// 					font-weight: 100;
+// 					font-family: 'Korolev Light';
+// 					text-transform: uppercase;
+// 					margin: 7%;
+// 				}
+// 			}
+// 		}
+// 	}
 
-	.header__subnav {
-		display: none;
+// 	.header__subnav {
+// 		display: none;
 
-		@media screen and (min-width: $lg-break) {
-			display: flex;
-			margin-left: auto;
+// 		@media screen and (min-width: $lg-break) {
+// 			display: flex;
+// 			margin-left: auto;
 
-			& ul {
-				display: flex;
-			}
-		}
-	}
+// 			& ul {
+// 				display: flex;
+// 			}
+// 		}
+// 	}
 
-	.hamburger__menu {
-		color: $white;
-		text-transform: uppercase;
-		font-weight: 100;
-		font-size: .8rem;
+// 	.hamburger__menu {
+// 		color: $white;
+// 		text-transform: uppercase;
+// 		font-weight: 100;
+// 		font-size: .8rem;
 
-		@media screen and (min-width: $med-break) {
-			display: none;
-		}
-	}
-}
+// 		@media screen and (min-width: $med-break) {
+// 			display: none;
+// 		}
+// 	}
+// }
 
 .hero {
 	position: relative;
@@ -147,6 +150,51 @@ header {
 		width: 100%;
 	}
 }
+
+.teams{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 400px;
+	
+
+	.atlanta__falcons{
+
+		.falcons__logo {
+			background-image: url(../../assets/img/falcons-logo-sm.png);
+			background-repeat: no-repeat;
+			width: 200px;
+			height: 200px;
+			z-index: 5;
+		}
+	}
+
+	.atlanta__united{
+
+		.united__logo {
+			background-image: url(../../assets/img/unitedfc-logo-sm.png);
+			background-repeat: no-repeat;
+			width: 200px;
+			height: 200px;
+			z-index: 5;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
