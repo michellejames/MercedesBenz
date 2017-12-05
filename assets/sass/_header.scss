@@ -84,7 +84,12 @@ header {
 			z-index: 11;
 
 			li {
-				//width: 100%;
+				//display: flex;
+				margin-left: 15px;
+
+				@media screen and (min-width: $lg-break) {
+					margin-left: 40px;
+				}
 				
 				a {
 					width: 100%;
@@ -94,20 +99,8 @@ header {
 					font-weight: 100;
 					font-family: 'Korolev Light';
 					text-transform: uppercase;
-					padding: 7%;
 				}
 			}
-		}
-	}
-}
-
-@media screen and (min-width: 1000px) {
-	header .header__subnav {
-		display: flex;
-		margin-left: auto;
-
-		ul {
-			display: flex;
 		}
 	}
 }

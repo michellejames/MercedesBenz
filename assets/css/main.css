@@ -66,22 +66,21 @@ header {
       align-items: center;
       width: 120%;
       z-index: 11; }
-      header .header__nav ul li a {
-        width: 100%;
-        text-decoration: none;
-        color: #fff;
-        font-size: 1rem;
-        font-weight: 100;
-        font-family: 'Korolev Light';
-        text-transform: uppercase;
-        padding: 7%; } }
+      header .header__nav ul li {
+        margin-left: 15px; } }
+      @media screen and (min-width: 900px) and (min-width: 1000px) {
+        header .header__nav ul li {
+          margin-left: 40px; } }
 
-@media screen and (min-width: 1000px) {
-  header .header__subnav {
-    display: flex;
-    margin-left: auto; }
-    header .header__subnav ul {
-      display: flex; } }
+@media screen and (min-width: 900px) {
+        header .header__nav ul li a {
+          width: 100%;
+          text-decoration: none;
+          color: #fff;
+          font-size: 1rem;
+          font-weight: 100;
+          font-family: 'Korolev Light';
+          text-transform: uppercase; } }
 
 @media screen and (min-width: 900px) {
   header .hamburger__menu {
@@ -178,9 +177,10 @@ header {
     background: #A61931;
     padding: 12%; }
 
-.articles {
-  display: flex; }
-  .articles .news__article {
+.article {
+  display: flex;
+  flex-direction: column; }
+  .article .news__article {
     background-image: url(../img/slideshow/falcons.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -193,34 +193,38 @@ header {
     padding: 20% 20px;
     border: 2px solid #580614; }
     @media screen and (min-width: 900px) {
-      .articles .news__article {
+      .article .news__article {
         width: 30%; } }
-
-.golden-div {
-  width: 82%;
-  margin-left: 9%;
-  height: 30px;
-  position: relative;
-  background: #817246;
-  margin-top: -12%;
-  z-index: 7;
-  color: black; }
-  @media screen and (min-width: 900px) {
-    .golden-div {
-      width: 32%; } }
-  .golden-div:before {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
+  .article .golden-div {
+    width: 82%;
+    position: relative;
+    z-index: 7;
     background: #817246;
-    transform: skewY(2deg);
-    transform-origin: 100%;
-    z-index: 6; }
+    color: #D5D5D5;
+    margin-top: -12%;
+    margin-left: 9%;
+    padding: 2% 3%; }
+    .article .golden-div h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px; }
+    .article .golden-div p {
+      font-size: .8rem; }
+    @media screen and (min-width: 900px) {
+      .article .golden-div {
+        width: 32%; } }
+    .article .golden-div:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #817246;
+      transform: skewY(2deg);
+      transform-origin: 100%;
+      z-index: -1; }
 
 .explore {
   display: flex;
@@ -459,213 +463,112 @@ header {
     font-size: 2.5rem;
     color: #D5D5D5; }
 
-.angle--top-left {
+.events {
+  display: flex;
+  flex-direction: column;
   position: relative;
-  overflow: hidden;
-  clip-path: polygon(0 calc(0% + 7vw), 100% 0, 100% 100%, 0 100%); }
-  @supports not (clip-path: polygon(0 calc(0% + 7vw), 100% 0, 100% 100%, 0 100%)) {
-    .angle--top-left::before, .angle--top-left::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      z-index: 10;
-      display: block;
-      border-style: solid; }
-    .angle--top-left::before {
-      top: 0;
-      border-width: 8vw 100vw 0 0;
-      border-color: #fff transparent transparent transparent; } }
+  margin-top: 15%; }
 
-.angle--top-right {
-  position: relative;
-  overflow: hidden;
-  clip-path: polygon(0 0, 100% calc(0% + 7vw), 100% 100%, 0 100%); }
-  @supports not (clip-path: polygon(0 0, 100% calc(0% + 7vw), 100% 100%, 0 100%)) {
-    .angle--top-right::before, .angle--top-right::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      z-index: 10;
-      display: block;
-      border-style: solid; }
-    .angle--top-right::before {
-      top: 0;
-      border-width: 8vw 0 0 100vw;
-      border-color: #fff transparent transparent transparent; } }
+.headline-events {
+  top: 2%;
+  left: 3%; }
+  .headline-events span {
+    background: #A61931;
+    padding: 3% 4%; }
 
-.angle--bottom-left {
-  position: relative;
-  overflow: hidden;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 7vw)); }
-  @supports not (clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 7vw))) {
-    .angle--bottom-left::before, .angle--bottom-left::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      z-index: 10;
-      display: block;
-      border-style: solid; }
-    .angle--bottom-left::after {
-      bottom: 0;
-      border-width: 0 100vw 8vw 0;
-      border-color: transparent transparent #fff transparent; } }
-
-.angle--bottom-right {
-  position: relative;
-  overflow: hidden;
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 7vw), 0 100%); }
-  @supports not (clip-path: polygon(0 0, 100% 0, 100% calc(100% - 7vw), 0 100%)) {
-    .angle--bottom-right::before, .angle--bottom-right::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      z-index: 10;
-      display: block;
-      border-style: solid; }
-    .angle--bottom-right::after {
-      bottom: 0;
-      border-width: 0 0 8vw 100vw;
-      border-color: transparent transparent #fff transparent; } }
-
-.angle--both-left-left {
-  position: relative;
-  overflow: hidden;
-  clip-path: polygon(0 calc(0% + 7vw), 100% 0, 100% 100%, 0 calc(100% - 7vw)); }
-  @supports not (clip-path: polygon(0 calc(0% + 7vw), 100% 0, 100% 100%, 0 calc(100% - 7vw))) {
-    .angle--both-left-left::before, .angle--both-left-left::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      z-index: 10;
-      display: block;
-      border-style: solid; }
-    .angle--both-left-left::before {
-      top: 0;
-      border-width: 8vw 100vw 0 0;
-      border-color: #fff transparent transparent transparent; }
-    .angle--both-left-left::after {
-      bottom: 0;
-      border-width: 0 100vw 8vw 0;
-      border-color: transparent transparent #fff transparent; } }
-
-.angle--both-right-right {
-  position: relative;
-  overflow: hidden;
-  clip-path: polygon(0 0, 100% calc(0% + 7vw), 100% calc(100% - 7vw), 0 100%); }
-  @supports not (clip-path: polygon(0 0, 100% calc(0% + 7vw), 100% calc(100% - 7vw), 0 100%)) {
-    .angle--both-right-right::before, .angle--both-right-right::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      z-index: 10;
-      display: block;
-      border-style: solid; }
-    .angle--both-right-right::before {
-      top: 0;
-      border-width: 8vw 0 0 100vw;
-      border-color: #fff transparent transparent transparent; }
-    .angle--both-right-right::after {
-      bottom: 0;
-      border-width: 0 0 8vw 100vw;
-      border-color: transparent transparent #fff transparent; } }
-
-.angle--both-left-right {
-  position: relative;
-  overflow: hidden;
-  clip-path: polygon(0 calc(0% + 7vw), 100% 0, 100% calc(100% - 7vw), 0 100%); }
-  @supports not (clip-path: polygon(0 calc(0% + 7vw), 100% 0, 100% calc(100% - 7vw), 0 100%)) {
-    .angle--both-left-right::before, .angle--both-left-right::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      z-index: 10;
-      display: block;
-      border-style: solid; }
-    .angle--both-left-right::before {
-      top: 0;
-      border-width: 8vw 100vw 0 0;
-      border-color: #fff transparent transparent transparent; }
-    .angle--both-left-right::after {
-      bottom: 0;
-      border-width: 0 0 8vw 100vw;
-      border-color: transparent transparent #fff transparent; } }
-
-.angle--both-right-left {
-  position: relative;
-  overflow: hidden;
-  clip-path: polygon(0 0, 100% calc(0% + 7vw), 100% 100%, 0 calc(100% - 7vw)); }
-  @supports not (clip-path: polygon(0 0, 100% calc(0% + 7vw), 100% 100%, 0 calc(100% - 7vw))) {
-    .angle--both-right-left::before, .angle--both-right-left::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      z-index: 10;
-      display: block;
-      border-style: solid; }
-    .angle--both-right-left::before {
-      top: 0;
-      border-width: 8vw 0 0 100vw;
-      border-color: #fff transparent transparent transparent; }
-    .angle--both-right-left::after {
-      bottom: 0;
-      border-width: 0 100vw 8vw 0;
-      border-color: transparent transparent #fff transparent; } }
-
-.angle__content {
-  display: block;
-  width: 100%;
-  height: auto; }
-
-.angle--colour {
-  color: #fff;
-  background-color: #2196F3;
-  text-align: center;
-  padding: 10% 0; }
-
-.angle--both-left-left {
-  position: relative;
-  overflow: hidden;
-  clip-path: polygon(0 calc(0% + 7vw), 100% 0, 100% 100%, 0 calc(100% - 7vw)); }
-  @supports not (clip-path: polygon(0 calc(0% + 7vw), 100% 0, 100% 100%, 0 calc(100% - 7vw))) {
-    .angle--both-left-left::before, .angle--both-left-left::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      z-index: 10;
-      display: block;
-      border-style: solid; }
-    .angle--both-left-left::before {
-      top: 0;
-      border-width: 8vw 100vw 0 0;
-      border-color: #fff transparent transparent transparent; }
-    .angle--both-left-left::after {
-      bottom: 0;
-      border-width: 0 100vw 8vw 0;
-      border-color: transparent transparent #fff transparent; } }
-
-.angle__content {
-  background-image: url(../img/slideshow/falcons.jpg);
-  width: 100%;
-  height: 50vh;
-  background-repeat: no-repeat;
-  background-position: top; }
-
-.footer__content {
-  background: #FEFEFE;
-  background-image: none;
-  height: 50vh; }
+.event__articles {
+  display: flex;
+  flex-direction: column; }
+  @media screen and (min-width: 900px) {
+    .event__articles {
+      flex-direction: row;
+      flex-wrap: wrap; } }
+  .event__articles .article {
+    display: flex;
+    flex-direction: column; }
+    @media screen and (min-width: 900px) {
+      .event__articles .article {
+        width: 50%; } }
+    .event__articles .article .event__article {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      width: 80%;
+      height: 200px;
+      position: relative;
+      margin: 10%;
+      margin-top: 30px;
+      padding: 20% 20px;
+      border: 2px solid #580614; }
+    .event__articles .article .event__article1 {
+      background-image: url(../img/stadiumwithfalcon.jpg); }
+    .event__articles .article .event__article2 {
+      background-image: url(../img/KennyChesney.jpg); }
+    .event__articles .article .event__article3 {
+      background-image: url(../img/stadiumfront.jpg); }
+    .event__articles .article .event__article4 {
+      background-image: url(../img/GraveDigger.jpg); }
+    .event__articles .article .golden-div {
+      width: 82%;
+      position: relative;
+      z-index: 7;
+      background: #817246;
+      color: #D5D5D5;
+      margin-top: -12%;
+      margin-left: 9%;
+      padding: 2% 3%; }
+      .event__articles .article .golden-div h2 {
+        font-size: 1rem;
+        font-weight: bold;
+        margin-bottom: 10px; }
+      .event__articles .article .golden-div p {
+        font-size: .8rem; }
+      .event__articles .article .golden-div:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #817246;
+        transform: skewY(2deg);
+        transform-origin: 100%;
+        z-index: -1; }
 
 footer {
+  background: #001622;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-transform: uppercase;
   color: #FEFEFE;
-  margin-bottom: 4rem; }
+  margin-top: 15%;
+  padding: 15% 10%;
+  position: relative; }
+  footer:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #001622;
+    transform: skewY(2deg);
+    transform-origin: 100%;
+    z-index: -1;
+    border-top: 3px solid #580614; }
+  @media screen and (min-width: 630px) {
+    footer {
+      padding: 5% 10%; } }
   footer .footer__text {
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center; }
     @media screen and (min-width: 630px) {
       footer .footer__text {
@@ -683,7 +586,7 @@ footer {
       height: 120px; }
       @media screen and (min-width: 630px) {
         footer .footer__text .mbs-logo__footer {
-          width: 25%; } }
+          width: 20%; } }
     footer .footer__text .sitemap,
     footer .footer__text .teams,
     footer .footer__text .social-media {
