@@ -4,233 +4,77 @@
   font-weight: normal;
   src: local("Korolev Light"), url("../../assets/font/KorolevLight.woff") format("woff"); }
 
-.angle--top-left {
-  position: relative;
-  overflow: hidden;
-  clip-path: polygon(0 calc(0% + 7vw), 100% 0, 100% 100%, 0 100%); }
-  @supports not (clip-path: polygon(0 calc(0% + 7vw), 100% 0, 100% 100%, 0 100%)) {
-    .angle--top-left::before, .angle--top-left::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      z-index: 10;
-      display: block;
-      border-style: solid; }
-    .angle--top-left::before {
-      top: 0;
-      border-width: 8vw 100vw 0 0;
-      border-color: #fff transparent transparent transparent; } }
-
-.angle--top-right {
-  position: relative;
-  overflow: hidden;
-  clip-path: polygon(0 0, 100% calc(0% + 7vw), 100% 100%, 0 100%); }
-  @supports not (clip-path: polygon(0 0, 100% calc(0% + 7vw), 100% 100%, 0 100%)) {
-    .angle--top-right::before, .angle--top-right::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      z-index: 10;
-      display: block;
-      border-style: solid; }
-    .angle--top-right::before {
-      top: 0;
-      border-width: 8vw 0 0 100vw;
-      border-color: #fff transparent transparent transparent; } }
-
-.angle--bottom-left {
-  position: relative;
-  overflow: hidden;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 7vw)); }
-  @supports not (clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 7vw))) {
-    .angle--bottom-left::before, .angle--bottom-left::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      z-index: 10;
-      display: block;
-      border-style: solid; }
-    .angle--bottom-left::after {
-      bottom: 0;
-      border-width: 0 100vw 8vw 0;
-      border-color: transparent transparent #fff transparent; } }
-
-.angle--bottom-right {
-  position: relative;
-  overflow: hidden;
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 7vw), 0 100%); }
-  @supports not (clip-path: polygon(0 0, 100% 0, 100% calc(100% - 7vw), 0 100%)) {
-    .angle--bottom-right::before, .angle--bottom-right::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      z-index: 10;
-      display: block;
-      border-style: solid; }
-    .angle--bottom-right::after {
-      bottom: 0;
-      border-width: 0 0 8vw 100vw;
-      border-color: transparent transparent #fff transparent; } }
-
-.angle--both-left-left {
-  position: relative;
-  overflow: hidden;
-  clip-path: polygon(0 calc(0% + 7vw), 100% 0, 100% 100%, 0 calc(100% - 7vw)); }
-  @supports not (clip-path: polygon(0 calc(0% + 7vw), 100% 0, 100% 100%, 0 calc(100% - 7vw))) {
-    .angle--both-left-left::before, .angle--both-left-left::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      z-index: 10;
-      display: block;
-      border-style: solid; }
-    .angle--both-left-left::before {
-      top: 0;
-      border-width: 8vw 100vw 0 0;
-      border-color: #fff transparent transparent transparent; }
-    .angle--both-left-left::after {
-      bottom: 0;
-      border-width: 0 100vw 8vw 0;
-      border-color: transparent transparent #fff transparent; } }
-
-.angle--both-right-right {
-  position: relative;
-  overflow: hidden;
-  clip-path: polygon(0 0, 100% calc(0% + 7vw), 100% calc(100% - 7vw), 0 100%); }
-  @supports not (clip-path: polygon(0 0, 100% calc(0% + 7vw), 100% calc(100% - 7vw), 0 100%)) {
-    .angle--both-right-right::before, .angle--both-right-right::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      z-index: 10;
-      display: block;
-      border-style: solid; }
-    .angle--both-right-right::before {
-      top: 0;
-      border-width: 8vw 0 0 100vw;
-      border-color: #fff transparent transparent transparent; }
-    .angle--both-right-right::after {
-      bottom: 0;
-      border-width: 0 0 8vw 100vw;
-      border-color: transparent transparent #fff transparent; } }
-
-.angle--both-left-right {
-  position: relative;
-  overflow: hidden;
-  clip-path: polygon(0 calc(0% + 7vw), 100% 0, 100% calc(100% - 7vw), 0 100%); }
-  @supports not (clip-path: polygon(0 calc(0% + 7vw), 100% 0, 100% calc(100% - 7vw), 0 100%)) {
-    .angle--both-left-right::before, .angle--both-left-right::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      z-index: 10;
-      display: block;
-      border-style: solid; }
-    .angle--both-left-right::before {
-      top: 0;
-      border-width: 8vw 100vw 0 0;
-      border-color: #fff transparent transparent transparent; }
-    .angle--both-left-right::after {
-      bottom: 0;
-      border-width: 0 0 8vw 100vw;
-      border-color: transparent transparent #fff transparent; } }
-
-.angle--both-right-left {
-  position: relative;
-  overflow: hidden;
-  clip-path: polygon(0 0, 100% calc(0% + 7vw), 100% 100%, 0 calc(100% - 7vw)); }
-  @supports not (clip-path: polygon(0 0, 100% calc(0% + 7vw), 100% 100%, 0 calc(100% - 7vw))) {
-    .angle--both-right-left::before, .angle--both-right-left::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      z-index: 10;
-      display: block;
-      border-style: solid; }
-    .angle--both-right-left::before {
-      top: 0;
-      border-width: 8vw 0 0 100vw;
-      border-color: #fff transparent transparent transparent; }
-    .angle--both-right-left::after {
-      bottom: 0;
-      border-width: 0 100vw 8vw 0;
-      border-color: transparent transparent #fff transparent; } }
-
-.angle__content {
-  display: block;
-  width: 100%;
-  height: auto; }
-
-.angle--colour {
-  color: #fff;
-  background-color: #2196F3;
-  text-align: center;
-  padding: 10% 0; }
-
-.angle--top-left {
-  position: relative;
-  overflow: hidden;
-  clip-path: polygon(0 calc(0% + 4vw), 100% 0, 100% 100%, 0 100%);
-  border-bottom: 3px solid #FEFEFE; }
-  @supports not (clip-path: polygon(0 calc(0% + 4vw), 100% 0, 100% 100%, 0 100%)) {
-    .angle--top-left::before, .angle--top-left::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      z-index: 10;
-      display: block;
-      border-style: solid; }
-    .angle--top-left::before {
-      top: 0;
-      border-width: 5vw 100vw 0 0;
-      border-color: #fff transparent transparent transparent; } }
-
-.angle__content {
-  background-image: url(../img/slideshow/falcons.jpg);
-  width: 100%;
-  height: 50vh;
-  background-repeat: no-repeat;
-  background-position: top; }
-
 header {
-  margin-top: 25px;
+  position: relative;
+  background: #003950;
   width: 100%;
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
-  padding: 5% 3%; }
+  padding: 2% 3%;
+  z-index: 10; }
+  header:after {
+    content: '';
+    display: block;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    background: #003950;
+    bottom: 0;
+    transform: skewY(-2deg);
+    transform-origin: 100%;
+    border-bottom: 3px solid #580614; }
   header .header__logo {
     background-image: url(../../assets/img/mbs-logo.svg);
     background-repeat: no-repeat;
     width: 80px;
     height: 50px;
-    margin-right: 5%; }
+    z-index: 10; }
+    @media screen and (min-width: 900px) {
+      header .header__logo {
+        width: 150px; } }
   header .header__nav, header .header__subnav {
     display: none; }
   header .hamburger__menu {
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 100;
-    font-size: .8rem; }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10; }
+    header .hamburger__menu .hamburger-line {
+      background: #A61931;
+      width: 45px;
+      height: 7px;
+      margin: 3px; }
+    header .hamburger__menu p {
+      color: #FEFEFE;
+      text-transform: uppercase;
+      font-size: .8rem;
+      letter-spacing: 3px;
+      margin-top: 5px; }
   @media screen and (min-width: 900px) {
     header {
-      justify-content: flex-start;
-      padding: 1% 2%; } }
+      flex-direction: row; } }
 
 @media screen and (min-width: 900px) {
   header .header__nav {
     display: flex; }
     header .header__nav ul {
       display: flex;
-      width: 100%; }
-      header .header__nav ul a {
+      justify-content: space-between;
+      align-items: center;
+      width: 120%;
+      z-index: 11; }
+      header .header__nav ul li a {
+        width: 100%;
         text-decoration: none;
         color: #fff;
         font-size: 1rem;
         font-weight: 100;
         font-family: 'Korolev Light';
         text-transform: uppercase;
-        margin: 7%; } }
+        padding: 7%; } }
 
 @media screen and (min-width: 1000px) {
   header .header__subnav {
@@ -243,8 +87,377 @@ header {
   header .hamburger__menu {
     display: none; } }
 
-.sponsors {
-  background: #FEFEFE; }
+.hero {
+  background: #001622; }
+  .hero .hero__image {
+    background-image: url(../img/slideshow/falcons.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 60vh;
+    position: relative;
+    z-index: 5;
+    padding: 20% 20px; }
+    @media screen and (min-width: 900px) {
+      .hero .hero__image {
+        height: 80vh; } }
+  .hero .hero__text {
+    padding: 5%;
+    color: #FEFEFE;
+    position: relative;
+    z-index: 6;
+    border-bottom: 3px solid #580614; }
+    @media screen and (min-width: 900px) {
+      .hero .hero__text {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; } }
+    @media screen and (min-width: 900px) {
+      .hero .hero__text {
+        padding: 2%; } }
+    .hero .hero__text:before {
+      content: '';
+      display: block;
+      height: 50%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      background: #001622;
+      top: 0;
+      transform: skewY(-2deg);
+      transform-origin: 0 100%;
+      border-top: 3px solid #580614; }
+      @media screen and (min-width: 900px) {
+        .hero .hero__text:before {
+          transform: skewY(2deg);
+          transform-origin: 100%; } }
+    .hero .hero__text .hero__text-headlines {
+      position: relative;
+      width: 95%;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 3%;
+      margin-left: 5%;
+      z-index: 7; }
+      @media screen and (min-width: 900px) {
+        .hero .hero__text .hero__text-headlines {
+          width: 45%; } }
+      .hero .hero__text .hero__text-headlines h1 {
+        font-size: 1.7rem;
+        margin-bottom: 3%;
+        font-weight: bold; }
+      .hero .hero__text .hero__text-headlines p {
+        font-size: 1rem;
+        font-weight: 100;
+        color: #D5D5D5;
+        margin-bottom: 3%;
+        text-align: left; }
+    .hero .hero__text .hero__text-options {
+      display: flex;
+      justify-content: space-around;
+      z-index: 10; }
+      @media screen and (min-width: 900px) {
+        .hero .hero__text .hero__text-options {
+          width: 45%; } }
+      .hero .hero__text .hero__text-options h4 {
+        font-size: 1.25rem;
+        text-transform: uppercase;
+        padding-bottom: 5px;
+        border-bottom: 5px solid #A61931; }
+
+.news {
+  display: flex;
+  flex-direction: column;
+  position: relative; }
+
+.headline-news {
+  top: 17%;
+  left: 3%; }
+  .headline-news span {
+    background: #A61931;
+    padding: 12%; }
+
+.articles {
+  display: flex; }
+  .articles .news__article {
+    background-image: url(../img/slideshow/falcons.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 80%;
+    height: 265px;
+    position: relative;
+    margin: 10%;
+    margin-top: 70px;
+    padding: 20% 20px;
+    border: 2px solid #580614; }
+    @media screen and (min-width: 900px) {
+      .articles .news__article {
+        width: 30%; } }
+
+.golden-div {
+  width: 82%;
+  margin-left: 9%;
+  height: 30px;
+  position: relative;
+  background: #817246;
+  margin-top: -12%;
+  z-index: 7;
+  color: black; }
+  @media screen and (min-width: 900px) {
+    .golden-div {
+      width: 32%; } }
+  .golden-div:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #817246;
+    transform: skewY(2deg);
+    transform-origin: 100%;
+    z-index: 6; }
+
+.explore {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 10%; }
+
+.headline-explore {
+  left: 3%; }
+  .headline-explore span {
+    background: #A61931;
+    padding: 2% 3%; }
+
+.explore__video {
+  width: 100%;
+  height: 50%; }
+
+.golden-div-2 {
+  width: 100%;
+  height: 30px;
+  position: relative;
+  background: #817246; }
+  @media screen and (min-width: 900px) {
+    .golden-div-2 {
+      height: 50px; } }
+  .golden-div-2:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #817246;
+    transform: skewY(-2deg);
+    transform-origin: 0 100%;
+    z-index: 6; }
+
+.falcons {
+  margin-top: 200px;
+  height: 525px;
+  background: #D5D5D5;
+  display: flex;
+  position: relative; }
+  .falcons:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 40%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    background: #D5D5D5;
+    top: 0;
+    transform: skewY(-2deg) translateY(-40%);
+    transform-origin: 100%;
+    z-index: 6; }
+  .falcons .falcons__text {
+    width: 45%;
+    margin-left: 5%;
+    z-index: 10; }
+    .falcons .falcons__text p {
+      line-height: 1.5;
+      font-weight: 100;
+      margin-bottom: 2.5vh; }
+    .falcons .falcons__text .falcons__learn-button {
+      background: #A61931;
+      color: #FEFEFE;
+      font-weight: 100;
+      border: none;
+      border-radius: 0;
+      text-transform: uppercase;
+      margin-bottom: 5vh;
+      padding: 5%; }
+      @media screen and (min-width: 900px) {
+        .falcons .falcons__text .falcons__learn-button {
+          padding: 3% 4%; } }
+    .falcons .falcons__text .falcons__homegame {
+      font-size: .8rem;
+      color: #000;
+      border-left: 2px solid #A61931;
+      padding-left: 20px;
+      text-transform: uppercase;
+      margin-bottom: 1vh; }
+    .falcons .falcons__text .falcons__nextgame {
+      font-size: 2rem;
+      color: #A61931;
+      font-weight: bold;
+      margin-bottom: 2vh;
+      text-transform: uppercase; }
+    .falcons .falcons__text .falcons__gamedate {
+      color: #A61931;
+      font-size: .8rem;
+      font-weight: 100;
+      margin-bottom: 2.5vh; }
+    .falcons .falcons__text .falcons__gameday-button {
+      background: #000;
+      color: #FEFEFE;
+      padding: 5%;
+      border: none;
+      border-radius: 0;
+      text-transform: uppercase; }
+      @media screen and (min-width: 900px) {
+        .falcons .falcons__text .falcons__gameday-button {
+          padding: 3% 4%; } }
+  .falcons .mattryan {
+    background-image: url(../img/falcons-player-6.png);
+    background-repeat: no-repeat;
+    width: 70%;
+    height: 500px;
+    background-size: contain;
+    background-position: right;
+    top: 0;
+    right: -10%;
+    z-index: 10;
+    position: absolute; }
+    @media screen and (min-width: 500px) {
+      .falcons .mattryan {
+        right: -5%; } }
+    @media screen and (min-width: 900px) {
+      .falcons .mattryan {
+        right: 0%; } }
+
+.headline-falcons {
+  display: flex;
+  flex-direction: column;
+  left: 5%;
+  margin-top: -130px; }
+  .headline-falcons span {
+    background: #A61931;
+    padding: 4%; }
+  .headline-falcons .falcons-span {
+    font-size: 2.5rem;
+    color: #D5D5D5; }
+
+.united {
+  margin-top: 200px;
+  height: 525px;
+  background: #D5D5D5;
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative; }
+  .united:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 40%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    background: #D5D5D5;
+    top: 0;
+    transform: skewY(2deg) translateY(-40%);
+    transform-origin: 100%;
+    z-index: 6; }
+  .united .united__text {
+    width: 45%;
+    margin-right: 5%;
+    z-index: 10;
+    text-align: right; }
+    .united .united__text p {
+      line-height: 1.5;
+      font-weight: 100;
+      margin-bottom: 2.5vh; }
+    .united .united__text .united__learn-button {
+      background: #817246;
+      color: #FEFEFE;
+      font-weight: 100;
+      border: none;
+      border-radius: 0;
+      text-transform: uppercase;
+      margin-bottom: 5vh;
+      padding: 5%; }
+      @media screen and (min-width: 900px) {
+        .united .united__text .united__learn-button {
+          padding: 3% 4%; } }
+    .united .united__text .united__homegame {
+      font-size: .8rem;
+      color: #000;
+      border-right: 2px solid #817246;
+      padding-right: 20px;
+      text-transform: uppercase;
+      margin-bottom: 1vh; }
+    .united .united__text .united__nextgame {
+      font-size: 2rem;
+      color: #817246;
+      font-weight: bold;
+      margin-bottom: 2vh;
+      text-transform: uppercase; }
+    .united .united__text .united__gamedate {
+      color: #817246;
+      font-size: .8rem;
+      font-weight: 100;
+      margin-bottom: 2.5vh; }
+    .united .united__text .united__gameday-button {
+      background: #000;
+      color: #FEFEFE;
+      padding: 5%;
+      border: none;
+      border-radius: 0;
+      text-transform: uppercase; }
+      @media screen and (min-width: 900px) {
+        .united .united__text .united__gameday-button {
+          padding: 3% 4%; } }
+  .united .hectorvillalba {
+    background-image: url(../img/united-player-3.png);
+    background-repeat: no-repeat;
+    width: 70%;
+    height: 500px;
+    background-size: contain;
+    background-position: left;
+    top: 0;
+    left: -10%;
+    z-index: 10;
+    position: absolute; }
+    @media screen and (min-width: 500px) {
+      .united .hectorvillalba {
+        left: -5%; } }
+    @media screen and (min-width: 900px) {
+      .united .hectorvillalba {
+        left: 0%; } }
+
+.headline-united {
+  display: flex;
+  flex-direction: column;
+  right: 5%;
+  margin-top: -130px; }
+  .headline-united span {
+    background: #817246;
+    padding: 4%;
+    text-align: right; }
+  .headline-united .united-atlanta-span {
+    color: #001622; }
+  .headline-united .united-span {
+    font-size: 2.5rem;
+    color: #D5D5D5; }
 
 .angle--top-left {
   position: relative;
@@ -507,41 +720,8 @@ footer {
   box-sizing: border-box; }
 
 body {
-  background: #011622;
+  background: #003950;
   font-family: 'Korolev Light'; }
-
-.hero {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center; }
-
-.item img {
-  max-height: 300px; }
-
-.hero__infowindow {
-  z-index: 500;
-  width: 90%;
-  text-align: center;
-  background: linear-gradient(180deg, rgba(0, 22, 34, 0.36) 0, #001622);
-  padding: 1rem;
-  color: #FEFEFE;
-  position: absolute;
-  bottom: 0; }
-  .hero__infowindow h2 {
-    font-size: 1.5em;
-    margin-bottom: 1rem; }
-  .hero__infowindow h4 {
-    font-size: .8em;
-    margin-bottom: 1rem; }
-  .hero__infowindow a {
-    text-decoration: none;
-    color: #FEFEFE;
-    text-transform: uppercase;
-    padding-bottom: 6px;
-    border-bottom: 1px solid #A51C33; }
-    .hero__infowindow a:hover {
-      border-bottom: 4px solid #A51C33; }
 
 .inside {
   display: flex;
@@ -557,22 +737,55 @@ body {
   .inside video {
     width: 100%; }
 
-.teams {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 400px; }
-  .teams .atlanta__falcons .falcons__logo {
-    background-image: url(../../assets/img/falcons-logo-sm.png);
-    background-repeat: no-repeat;
-    width: 200px;
-    height: 200px;
-    z-index: 5; }
-  .teams .atlanta__united .united__logo {
-    background-image: url(../../assets/img/unitedfc-logo-sm.png);
-    background-repeat: no-repeat;
-    width: 200px;
-    height: 200px;
-    z-index: 5; }
+.bigM {
+  background-image: url(../../assets/img/BigM.png);
+  background-repeat: no-repeat;
+  width: 200%;
+  padding-bottom: 500px;
+  height: 0;
+  position: absolute;
+  margin-top: 5%;
+  left: -60%; }
+
+.halfM {
+  background-image: url(../../assets/img/m_half_blue.svg);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: -70%;
+  margin-top: 7%; }
+
+.headline {
+  font-size: 1.5625rem;
+  color: #D5D5D5;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: absolute;
+  transform: rotate(-5deg);
+  z-index: 5; }
+
+.teams-headline {
+  font-size: 1.4375rem;
+  color: #580614;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: absolute;
+  z-index: 10;
+  font-weight: bold; }
+
+.explore-video-button {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  z-index: 6;
+  transform: rotate(0deg);
+  font-size: 1.3rem; }
+  .explore-video-button span {
+    background: #A61931;
+    padding: 3%; }
+  @media screen and (min-width: 900px) {
+    .explore-video-button {
+      right: 2%; } }
 
 /*# sourceMappingURL=main.css.map */

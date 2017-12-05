@@ -1,269 +1,119 @@
 
-// $angle: The angle in degrees: 1 - 45
-// $angle-position-y: The Y position of the angle: top | bottom | both
-// $angle-position-x: The X position of the angle: left | right
-// $angle-position-bottom-x: The X position of the bottom angle if using 'both' for $angle-position-y: left | right
-// $fallback: Create a fallback for older browsers: true | false
-// $fallback-color: Fallback colour for older browsers: Hex color
-
-@mixin angle-edge($angle, $angle-position-y, $angle-position-x, $angle-position-bottom-x: '', $fallback: true, $fallback-color: #fff) {
-
-  position: relative;
-  overflow: hidden;
-
-  // Converts degrees to VW, 100vw = 45deg using this technique
-  @if $angle < 46 {
-    $angle: convertDegToVW($angle);
-  }
-  @if $angle > 45 {
-    $angle: 0;
-    @error 'Invalid angle, it must be between 1-45';
-  }
-
-  @if $angle-position-bottom-x == '' {
-    $angle-position-bottom-x: $angle-position-x;
-  }
-
-  $angle-calc-top: calc(0% + #{$angle}vw);
-  $angle-calc-bottom: calc(100% - #{$angle}vw);
-
-  $clip-path-top: 0 0, 100% 0;
-  $clip-path-bottom: 100% 100%, 0 100%;
-
-  $border-width-top: '';
-  $border-width-bottom: '';
-  $border-color-top: '';
-  $border-color-bottom: '';
-
-
-  @if $angle-position-y == 'top' or $angle-position-y == 'both' {
-    
-    @if $angle-position-x == 'left' {
-      $clip-path-top: 0 $angle-calc-top, 100% 0;   
-
-      $border-width-top: #{$angle + 1}vw 100vw 0 0;
-    }
-
-    @if $angle-position-x == 'right' {
-      $clip-path-top: 0 0, 100% $angle-calc-top;
-
-      $border-width-top: #{$angle + 1}vw 0 0 100vw;
-    }
-
-    $border-color-top: $fallback-color transparent transparent transparent;
-  }
-
-
-  @if $angle-position-y == 'bottom' or $angle-position-y == 'both' {
-
-    @if $angle-position-y == 'both' and $angle-position-x != $angle-position-bottom-x {
-      $angle-position-x: $angle-position-bottom-x;
-    }
-
-    @if $angle-position-x == 'left' {
-      $clip-path-bottom: 100% 100%, 0 $angle-calc-bottom;   
-
-      $border-width-bottom: 0 100vw #{$angle + 1}vw 0;
-    }
-
-    @if $angle-position-x == 'right' {
-      $clip-path-bottom: 100% $angle-calc-bottom, 0 100%;   
-
-      $border-width-bottom: 0 0 #{$angle + 1}vw 100vw;
-    }
-    
-    $border-color-bottom: transparent transparent $fallback-color transparent;
-  }
-
-  $clip-path: polygon($clip-path-top, $clip-path-bottom);
-  clip-path: $clip-path;
-
-
-  // Fallback for clip-path with solid colours
-  @if $fallback {
-
-    @supports not (clip-path: $clip-path) {
-
-      &::before, &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        z-index: 10;
-        display: block;
-        border-style: solid;
-      }
-
-      @if $angle-position-y == 'top' or $angle-position-y == 'both' {
-        &::before {
-          top: 0;
-          border-width: $border-width-top;
-          border-color: $border-color-top;
-        }
-      }
-
-      @if $angle-position-y == 'bottom' or $angle-position-y == 'both' {
-        &::after {
-          bottom: 0;
-          border-width: $border-width-bottom;
-          border-color: $border-color-bottom;
-        }
-      }
-
-    }
-
-  }
-
-}
-
-// Converts degrees to VW, 100vw = 45deg using this technique
-@function convertDegToVW($angle){
-  @return round($angle*2.22);
-}
-
-
-// Classes
-.angle--top-left {
-  @include angle-edge($angle: 3, $angle-position-y: 'top', $angle-position-x: 'left');
-}
-
-.angle--top-right {
-  @include angle-edge($angle: 3, $angle-position-y: 'top', $angle-position-x: 'right');
-}
-
-.angle--bottom-left {
-  @include angle-edge($angle: 3, $angle-position-y: 'bottom', $angle-position-x: 'left');
-}
-
-.angle--bottom-right {
-  @include angle-edge($angle: 3, $angle-position-y: 'bottom', $angle-position-x: 'right');
-}
-
-.angle--both-left-left {
-  @include angle-edge($angle: 3, $angle-position-y: 'both', $angle-position-x: 'left');
-}
-
-.angle--both-right-right {
-  @include angle-edge($angle: 3, $angle-position-y: 'both', $angle-position-x: 'right');
-}
-
-.angle--both-left-right {
-  @include angle-edge($angle: 3, $angle-position-y: 'both', $angle-position-x: 'left', $angle-position-bottom-x: 'right');
-}
-
-.angle--both-right-left {
-  @include angle-edge($angle: 3, $angle-position-y: 'both', $angle-position-x: 'right', $angle-position-bottom-x: 'left');
-}
-
-
-  .angle__content {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-.angle--colour {
-  color: #fff;
-  background-color: #2196F3;
-  text-align: center;
-  padding: 10% 0;
-}
-
-.angle--top-left {
-  @include angle-edge($angle: 2, $angle-position-y: 'top', $angle-position-x: 'left');
-	//margin-top: 10%;
-	border-bottom: 3px solid $white;
-}
-
-.angle__content {
-	background-image: url(../img/slideshow/falcons.jpg);
-	width: 100%;
-	height: 50vh;
-	background-repeat: no-repeat;
-	background-position: top;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-//Header Styling
 
 header {
-	margin-top: 25px;
+	position: relative;
+	background: $lightblue;
 	width: 100%;
 	display: flex;
+	flex-direction: row-reverse;
 	justify-content: space-between;
 	align-items: center;
-	padding: 5% 3%;
+	padding: 2% 3%;
+	z-index: 10;
 
+	&:after {
+		content: '';
+		display: block;
+		height: 50%;
+		left: 0;
+		position: absolute;
+		right: 0;
+		background: $lightblue;
+		bottom: 0;
+		transform: skewY(-2deg);
+		transform-origin: 100%;
+		border-bottom: 3px solid $darkred;
+	}
+	
 	.header__logo {
 		background-image: url(../../assets/img/mbs-logo.svg);
 		background-repeat: no-repeat;
 		width: 80px;
 		height: 50px;
-		margin-right: 5%;
-  	}
+		z-index: 10;
+
+		@media screen and (min-width: 900px) {
+			width: 150px;
+		}
+
+	}
 
 	.header__nav, .header__subnav {
 		display: none;
 	}
 
 	.hamburger__menu {
-		color: #fff;
-		text-transform: uppercase;
-		font-weight: 100;
-		font-size: .8rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		z-index: 10;
+
+		.hamburger-line {
+			background: $lightred;
+			width: 45px;
+			height: 7px;
+			margin: 3px;
+		}
+
+		& p {
+			color: $white;
+			text-transform: uppercase;
+			font-size: .8rem;
+			letter-spacing: 3px;
+			margin-top: 5px;
+		}
 	}
 
 	@media screen and (min-width: 900px) {
-		justify-content: flex-start;
-		padding: 1% 2%;
+		flex-direction: row;
+		//padding: 1% 2%;
 	}
 }
 
 
 
 @media screen and (min-width: 900px) {
-  header .header__nav {
-    display: flex;
+	header .header__nav {
+		display: flex;
 
-    ul {
-      display: flex;
-      width: 100%;
+		ul {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 120%;
+			z-index: 11;
 
-      a {
-        text-decoration: none;
-        color: #fff;
-        font-size: 1rem;
-        font-weight: 100;
-        font-family: 'Korolev Light';
-        text-transform: uppercase;
-        margin: 7%;
-      }
-    }
-  }
+			li {
+				//width: 100%;
+				
+				a {
+					width: 100%;
+					text-decoration: none;
+					color: #fff;
+					font-size: 1rem;
+					font-weight: 100;
+					font-family: 'Korolev Light';
+					text-transform: uppercase;
+					padding: 7%;
+				}
+			}
+		}
+	}
 }
 
 @media screen and (min-width: 1000px) {
-  header .header__subnav {
-    display: flex;
-    margin-left: auto;
+	header .header__subnav {
+		display: flex;
+		margin-left: auto;
 
-    ul {
-      display: flex;
-    }
-  }
+		ul {
+			display: flex;
+		}
+	}
 }
 
 @media screen and (min-width: 900px) {
-  header .hamburger__menu {
-    display: none;
-  }
+	header .hamburger__menu {
+		display: none;
+	}
 }
