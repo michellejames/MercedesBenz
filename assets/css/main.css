@@ -270,6 +270,9 @@ header {
   background: #D5D5D5;
   display: flex;
   position: relative; }
+  @media screen and (min-width: 900px) {
+    .falcons {
+      display: none; } }
   .falcons:before {
     content: '';
     display: block;
@@ -368,6 +371,9 @@ header {
   display: flex;
   flex-direction: row-reverse;
   position: relative; }
+  @media screen and (min-width: 900px) {
+    .united {
+      display: none; } }
   .united:before {
     content: '';
     display: block;
@@ -463,6 +469,124 @@ header {
     font-size: 2.5rem;
     color: #D5D5D5; }
 
+.united-desktop {
+  margin-top: 200px;
+  width: 50%;
+  height: 525px;
+  display: flex;
+  flex-direction: row-reverse;
+  position: absolute;
+  top: 0;
+  left: 0; }
+  .united-desktop .united__text {
+    width: 45%;
+    margin-right: 5%;
+    z-index: 10;
+    text-align: right; }
+    .united-desktop .united__text p {
+      line-height: 1.5;
+      font-weight: 100;
+      margin-bottom: 2.5vh; }
+    .united-desktop .united__text .united__learn-button {
+      background: #817246;
+      color: #FEFEFE;
+      font-weight: 100;
+      border: none;
+      border-radius: 0;
+      text-transform: uppercase;
+      margin-bottom: 5vh;
+      padding: 5%; }
+      @media screen and (min-width: 900px) {
+        .united-desktop .united__text .united__learn-button {
+          padding: 3% 4%; } }
+    .united-desktop .united__text .united__homegame {
+      font-size: .8rem;
+      color: #000;
+      border-right: 2px solid #817246;
+      padding-right: 20px;
+      text-transform: uppercase;
+      margin-bottom: 1vh; }
+    .united-desktop .united__text .united__nextgame {
+      font-size: 2rem;
+      color: #817246;
+      font-weight: bold;
+      margin-bottom: 2vh;
+      text-transform: uppercase; }
+    .united-desktop .united__text .united__gamedate {
+      color: #817246;
+      font-size: .8rem;
+      font-weight: 100;
+      margin-bottom: 2.5vh; }
+    .united-desktop .united__text .united__gameday-button {
+      background: #000;
+      color: #FEFEFE;
+      padding: 5%;
+      border: none;
+      border-radius: 0;
+      text-transform: uppercase; }
+      @media screen and (min-width: 900px) {
+        .united-desktop .united__text .united__gameday-button {
+          padding: 3% 4%; } }
+  .united-desktop .hectorvillalba {
+    background-image: url(../img/united-player-3.png);
+    background-repeat: no-repeat;
+    width: 70%;
+    height: 700px;
+    background-size: contain;
+    background-position: left;
+    top: 0;
+    left: -10%;
+    z-index: 10;
+    position: absolute; }
+    @media screen and (min-width: 500px) {
+      .united-desktop .hectorvillalba {
+        left: -5%; } }
+    @media screen and (min-width: 900px) {
+      .united-desktop .hectorvillalba {
+        left: 0%; } }
+
+.headline-united {
+  display: flex;
+  flex-direction: column;
+  right: 5%;
+  margin-top: -130px; }
+  .headline-united span {
+    background: #817246;
+    padding: 4%;
+    text-align: right; }
+  .headline-united .united-atlanta-span {
+    color: #001622; }
+  .headline-united .united-span {
+    font-size: 2.5rem;
+    color: #D5D5D5; }
+
+.stadium__teams {
+  display: none; }
+  @media screen and (min-width: 900px) {
+    .stadium__teams {
+      margin-top: 10%;
+      display: flex;
+      flex-direction: column; } }
+  .stadium__teams .teams-background {
+    position: relative;
+    z-index: -1; }
+    .stadium__teams .teams-background .arrow-down {
+      width: 0;
+      height: 0;
+      border-left: 50vw solid transparent;
+      border-right: 50vw solid transparent;
+      border-top: 60vw solid #D5D5D5; }
+    .stadium__teams .teams-background .arrow-up {
+      width: 0;
+      height: 0;
+      border-left: 50vw solid transparent;
+      border-right: 50vw solid transparent;
+      border-bottom: 60vw solid #D5D5D5;
+      margin-top: -60vh; }
+      @media screen and (min-width: 1000px) {
+        .stadium__teams .teams-background .arrow-up {
+          margin-top: -80vh; } }
+
 .events {
   display: flex;
   flex-direction: column;
@@ -553,7 +677,7 @@ footer {
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;
+    top: -5px;
     left: 0;
     right: 0;
     background: #001622;

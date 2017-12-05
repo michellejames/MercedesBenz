@@ -1,0 +1,53 @@
+
+.stadium__teams {
+	display: none;
+
+
+	@media screen and (min-width: $med-break) {
+		margin-top: 10%;
+	  	display: flex;
+	  	flex-direction: column;
+		// position: relative;
+	}
+
+	.teams-background {
+		position: relative;
+		z-index: -1;
+
+		.arrow-down {
+		  width: 0; 
+		  height: 0; 
+		  border-left: 50vw solid transparent;
+		  border-right: 50vw solid transparent;
+		  
+		  border-top: 60vw solid $gray;
+		}
+
+		.arrow-up {
+		  width: 0; 
+		  height: 0; 
+		  border-left: 50vw solid transparent;
+		  border-right: 50vw solid transparent;
+		  
+		  border-bottom: 60vw solid $gray;
+		  margin-top: -60vh;
+
+		  @media screen and (min-width: $lg-break) {
+		    margin-top: -80vh;
+		  }
+
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+

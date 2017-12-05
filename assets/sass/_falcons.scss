@@ -5,6 +5,10 @@
 	display: flex;
 	position: relative;
 
+	@media screen and (min-width: $med-break) {
+		display: none;
+	}
+
 	&:before {
 	  content: '';
 	  display: block;
