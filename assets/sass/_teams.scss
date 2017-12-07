@@ -1,44 +1,160 @@
 
 .stadium__teams {
 	display: none;
-
+	position: relative;
 
 	@media screen and (min-width: $med-break) {
+		margin: 0 auto;
 		margin-top: 10%;
-	  	display: flex;
-	  	flex-direction: column;
-		// position: relative;
-	}
+		display: flex;
 
-	.teams-background {
-		position: relative;
-		z-index: -1;
+		min-height: 400px;
+		height: 100vh;
+		max-height: 600px;
 
-		.arrow-down {
-		  width: 0; 
-		  height: 0; 
-		  border-left: 50vw solid transparent;
-		  border-right: 50vw solid transparent;
-		  
-		  border-top: 60vw solid $gray;
-		}
+		.teams__background {
+			position: absolute;
+			z-index: 10;
+			background-image: url(../../assets/img/hourglass.png);
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 100%;
+			height: 100%;
 
-		.arrow-up {
-		  width: 0; 
-		  height: 0; 
-		  border-left: 50vw solid transparent;
-		  border-right: 50vw solid transparent;
-		  
-		  border-bottom: 60vw solid $gray;
-		  margin-top: -60vh;
-
-		  @media screen and (min-width: $lg-break) {
-		    margin-top: -80vh;
-		  }
+			max-width: 1000px;
+			margin: 0 auto;
 
 		}
 	}
 
+	.united-desktop {
+		display: none;
+
+		@media screen and (min-width: $med-break) {
+			position: relative;
+			z-index: 11;
+			margin-top: 200px;
+			display: flex;
+			flex-direction: row-reverse;
+			align-items: center;
+			width: 50%;
+		}
+
+		.united__text {
+			width: 45%;
+		    //margin-top: 15%;
+		    margin-right: 5%;
+		    z-index: 10;
+		    text-align: right;
+
+		    & p {
+			    line-height: 1.5;
+			    font-weight: 100;
+			    margin-bottom: 2.5vh;
+		    }
+
+		    .united__learn-button {
+		    	background: $gold;
+		    	color: $white;
+		    	font-weight: 100;
+		    	border: none;
+		    	border-radius: 0;
+		    	text-transform: uppercase;
+		    	margin-bottom: 5vh;
+		    	padding: 5%;
+
+		    	@media screen and (min-width: $med-break) {
+			    	padding: 3% 4%;
+		    	}
+		    }
+
+		    .united__homegame {
+		    	font-size: .8rem;
+		    	color: #000;
+		    	border-right: 2px solid $gold;
+		    	padding-right: 20px;
+		    	text-transform: uppercase;
+		    	margin-bottom: 1vh;
+		    }
+
+		    .united__nextgame {
+				font-size: 2rem;
+				color: $gold;
+				font-weight: bold;
+				margin-bottom: 2vh;
+				text-transform: uppercase;
+		    }
+
+		    .united__gamedate {
+		    	color: $gold;
+		    	font-size: .8rem;
+		    	font-weight: 100;
+		    	margin-bottom: 2.5vh;
+		    }
+
+		    .united__gameday-button {
+		    	background: #000;
+		    	color: $white;
+		    	padding: 5%;
+		    	//border-bottom: 3px solid transparent;
+		    	border: none;
+		    	border-radius: 0;
+		    	text-transform: uppercase;
+
+		    	@media screen and (min-width: $med-break) {
+			    	padding: 3% 4%;
+		    	}
+
+		    	// &:hover{
+		    	// 	border-bottom: 5px solid $lightred;
+		    	// }
+		    }
+		}
+
+		.hectorvillalba {
+			background-image: url(../img/united-player-3.png);
+			background-repeat: no-repeat;
+			width: 70%;
+			height: 500px;
+			background-size: contain;
+			background-position: left;
+		    top: 0;
+		    left: -10%;
+			z-index: 10;
+			position: absolute;
+
+			@media screen and (min-width: 500px) {
+			  left: -5%;
+			}
+
+			@media screen and (min-width: $med-break) {
+			  left: 0%;
+			}
+		}
+	}
+
+	.headline-united {
+		display: flex;
+		flex-direction: column;
+		right: 5%;
+		margin-top: -300px;
+
+
+		& span {
+			background: $gold;
+			padding: 4%;
+			text-align: right;
+		}
+
+		.united-atlanta-span {
+			color: $darkblue;
+		}
+
+		.united-span {
+			font-size: 2.5rem;
+			color: $gray
+		}
+	}
 }
 
 

@@ -100,3 +100,100 @@ body {
 	  right: 2%;
 	}
 }
+
+
+.background__styles {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+
+	.letterM1 {
+		position: absolute;
+		background-image: url(../../assets/img/m_whole_black.svg);
+		background-repeat: no-repeat;
+		width: 100%;
+		height: 100%;
+		border-top: 10px solid $darkblue;
+		border-bottom: 10px solid $darkblue;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#background {
+	position: absolute;
+	top: 800px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0; // or lower if there is anything set to z-index 1, or change those to a higher index, etc.
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+
+	figure {
+		width: 100vw;
+		border-width: 5.333333333vh;
+		border-style: solid;
+		background-size: auto 100%;
+
+		.dark-blue {
+			background-color: $darkblue;
+			border-color: $darkblue;
+			&.vertical {
+				background-position: center right -7.530120482vw;
+				background-image: url(../../assets/img/m_whole_black.svg);
+			}
+
+			&.horizontal {
+				background-image: url(../../assets/img/m_half_black.svg);
+			}
+		}
+
+		.light-blue {
+			background-color: $lightblue;
+			border-color: $lightblue;
+
+			&.vertical {
+				background-position: center left -7.530120482vw;
+				background-image: url(../../assets/img/m_whole_blue.svg);
+			}
+
+			&.horizontal {
+				background-image: url(../../assets/img/m_half_blue.svg);
+			}
+		}
+
+		.vertical {
+			height: 89.90963855vh;
+		}
+
+		.horizontal {
+			height: 48.45331325vh;
+		}
+	}
+}

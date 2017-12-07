@@ -469,123 +469,118 @@ header {
     font-size: 2.5rem;
     color: #D5D5D5; }
 
-.united-desktop {
-  margin-top: 200px;
-  width: 50%;
-  height: 525px;
-  display: flex;
-  flex-direction: row-reverse;
-  position: absolute;
-  top: 0;
-  left: 0; }
-  .united-desktop .united__text {
-    width: 45%;
-    margin-right: 5%;
-    z-index: 10;
-    text-align: right; }
-    .united-desktop .united__text p {
-      line-height: 1.5;
-      font-weight: 100;
-      margin-bottom: 2.5vh; }
-    .united-desktop .united__text .united__learn-button {
-      background: #817246;
-      color: #FEFEFE;
-      font-weight: 100;
-      border: none;
-      border-radius: 0;
-      text-transform: uppercase;
-      margin-bottom: 5vh;
-      padding: 5%; }
-      @media screen and (min-width: 900px) {
-        .united-desktop .united__text .united__learn-button {
-          padding: 3% 4%; } }
-    .united-desktop .united__text .united__homegame {
-      font-size: .8rem;
-      color: #000;
-      border-right: 2px solid #817246;
-      padding-right: 20px;
-      text-transform: uppercase;
-      margin-bottom: 1vh; }
-    .united-desktop .united__text .united__nextgame {
-      font-size: 2rem;
-      color: #817246;
-      font-weight: bold;
-      margin-bottom: 2vh;
-      text-transform: uppercase; }
-    .united-desktop .united__text .united__gamedate {
-      color: #817246;
-      font-size: .8rem;
-      font-weight: 100;
-      margin-bottom: 2.5vh; }
-    .united-desktop .united__text .united__gameday-button {
-      background: #000;
-      color: #FEFEFE;
-      padding: 5%;
-      border: none;
-      border-radius: 0;
-      text-transform: uppercase; }
-      @media screen and (min-width: 900px) {
-        .united-desktop .united__text .united__gameday-button {
-          padding: 3% 4%; } }
-  .united-desktop .hectorvillalba {
-    background-image: url(../img/united-player-3.png);
-    background-repeat: no-repeat;
-    width: 70%;
-    height: 700px;
-    background-size: contain;
-    background-position: left;
-    top: 0;
-    left: -10%;
-    z-index: 10;
-    position: absolute; }
-    @media screen and (min-width: 500px) {
-      .united-desktop .hectorvillalba {
-        left: -5%; } }
-    @media screen and (min-width: 900px) {
-      .united-desktop .hectorvillalba {
-        left: 0%; } }
-
-.headline-united {
-  display: flex;
-  flex-direction: column;
-  right: 5%;
-  margin-top: -130px; }
-  .headline-united span {
-    background: #817246;
-    padding: 4%;
-    text-align: right; }
-  .headline-united .united-atlanta-span {
-    color: #001622; }
-  .headline-united .united-span {
-    font-size: 2.5rem;
-    color: #D5D5D5; }
-
 .stadium__teams {
-  display: none; }
+  display: none;
+  position: relative; }
   @media screen and (min-width: 900px) {
     .stadium__teams {
+      margin: 0 auto;
       margin-top: 10%;
       display: flex;
-      flex-direction: column; } }
-  .stadium__teams .teams-background {
-    position: relative;
-    z-index: -1; }
-    .stadium__teams .teams-background .arrow-down {
-      width: 0;
-      height: 0;
-      border-left: 50vw solid transparent;
-      border-right: 50vw solid transparent;
-      border-top: 60vw solid #D5D5D5; }
-    .stadium__teams .teams-background .arrow-up {
-      width: 0;
-      height: 0;
-      border-left: 50vw solid transparent;
-      border-right: 50vw solid transparent;
-      border-bottom: 60vw solid #D5D5D5;
-      margin-top: -60vh; }
-      @media screen and (min-width: 1000px) {
-        .stadium__teams .teams-background .arrow-up {
-          margin-top: -80vh; } }
+      min-height: 400px;
+      height: 100vh;
+      max-height: 600px; }
+      .stadium__teams .teams__background {
+        position: absolute;
+        z-index: 10;
+        background-image: url(../../assets/img/hourglass.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        max-width: 1000px;
+        margin: 0 auto; } }
+  .stadium__teams .united-desktop {
+    display: none; }
+    @media screen and (min-width: 900px) {
+      .stadium__teams .united-desktop {
+        position: relative;
+        z-index: 11;
+        margin-top: 200px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        width: 50%; } }
+    .stadium__teams .united-desktop .united__text {
+      width: 45%;
+      margin-right: 5%;
+      z-index: 10;
+      text-align: right; }
+      .stadium__teams .united-desktop .united__text p {
+        line-height: 1.5;
+        font-weight: 100;
+        margin-bottom: 2.5vh; }
+      .stadium__teams .united-desktop .united__text .united__learn-button {
+        background: #817246;
+        color: #FEFEFE;
+        font-weight: 100;
+        border: none;
+        border-radius: 0;
+        text-transform: uppercase;
+        margin-bottom: 5vh;
+        padding: 5%; }
+        @media screen and (min-width: 900px) {
+          .stadium__teams .united-desktop .united__text .united__learn-button {
+            padding: 3% 4%; } }
+      .stadium__teams .united-desktop .united__text .united__homegame {
+        font-size: .8rem;
+        color: #000;
+        border-right: 2px solid #817246;
+        padding-right: 20px;
+        text-transform: uppercase;
+        margin-bottom: 1vh; }
+      .stadium__teams .united-desktop .united__text .united__nextgame {
+        font-size: 2rem;
+        color: #817246;
+        font-weight: bold;
+        margin-bottom: 2vh;
+        text-transform: uppercase; }
+      .stadium__teams .united-desktop .united__text .united__gamedate {
+        color: #817246;
+        font-size: .8rem;
+        font-weight: 100;
+        margin-bottom: 2.5vh; }
+      .stadium__teams .united-desktop .united__text .united__gameday-button {
+        background: #000;
+        color: #FEFEFE;
+        padding: 5%;
+        border: none;
+        border-radius: 0;
+        text-transform: uppercase; }
+        @media screen and (min-width: 900px) {
+          .stadium__teams .united-desktop .united__text .united__gameday-button {
+            padding: 3% 4%; } }
+    .stadium__teams .united-desktop .hectorvillalba {
+      background-image: url(../img/united-player-3.png);
+      background-repeat: no-repeat;
+      width: 70%;
+      height: 500px;
+      background-size: contain;
+      background-position: left;
+      top: 0;
+      left: -10%;
+      z-index: 10;
+      position: absolute; }
+      @media screen and (min-width: 500px) {
+        .stadium__teams .united-desktop .hectorvillalba {
+          left: -5%; } }
+      @media screen and (min-width: 900px) {
+        .stadium__teams .united-desktop .hectorvillalba {
+          left: 0%; } }
+  .stadium__teams .headline-united {
+    display: flex;
+    flex-direction: column;
+    right: 5%;
+    margin-top: -300px; }
+    .stadium__teams .headline-united span {
+      background: #817246;
+      padding: 4%;
+      text-align: right; }
+    .stadium__teams .headline-united .united-atlanta-span {
+      color: #001622; }
+    .stadium__teams .headline-united .united-span {
+      font-size: 2.5rem;
+      color: #D5D5D5; }
 
 .events {
   display: flex;
@@ -814,5 +809,55 @@ body {
   @media screen and (min-width: 900px) {
     .explore-video-button {
       right: 2%; } }
+
+.background__styles {
+  width: 100%;
+  height: 100vh;
+  position: relative; }
+  .background__styles .letterM1 {
+    position: absolute;
+    background-image: url(../../assets/img/m_whole_black.svg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    border-top: 10px solid #001622;
+    border-bottom: 10px solid #001622; }
+
+#background {
+  position: absolute;
+  top: 800px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center; }
+  #background figure {
+    width: 100vw;
+    border-width: 5.333333333vh;
+    border-style: solid;
+    background-size: auto 100%; }
+    #background figure .dark-blue {
+      background-color: #001622;
+      border-color: #001622; }
+      #background figure .dark-blue.vertical {
+        background-position: center right -7.530120482vw;
+        background-image: url(../../assets/img/m_whole_black.svg); }
+      #background figure .dark-blue.horizontal {
+        background-image: url(../../assets/img/m_half_black.svg); }
+    #background figure .light-blue {
+      background-color: #003950;
+      border-color: #003950; }
+      #background figure .light-blue.vertical {
+        background-position: center left -7.530120482vw;
+        background-image: url(../../assets/img/m_whole_blue.svg); }
+      #background figure .light-blue.horizontal {
+        background-image: url(../../assets/img/m_half_blue.svg); }
+    #background figure .vertical {
+      height: 89.90963855vh; }
+    #background figure .horizontal {
+      height: 48.45331325vh; }
 
 /*# sourceMappingURL=main.css.map */
