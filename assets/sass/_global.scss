@@ -1,0 +1,29 @@
+body {
+	background-color: $lightBlue;
+	font-family: 'Korolev Light';
+	overflow-x: hidden;
+}
+
+section {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: $largeBreakMobile;
+	position: relative;
+
+	@include breakpoint(600px) {
+		margin-bottom: $xlGapVHTab;
+	}
+}
+
+main {
+	width: 100%;
+}
+
+.section-header {
+	@include sectionHeader;
+}
+
+.section-footer {
+	@include sectionFooter;
+}

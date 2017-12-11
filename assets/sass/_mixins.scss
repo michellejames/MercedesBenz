@@ -1,0 +1,262 @@
+@mixin breakpoint($size) {
+  @media screen and (min-width: $size) { @content; }
+}
+
+// CONTAINERS ------------------------------------
+
+@mixin smallContainer {
+  height: 58vw;
+  width: 47vw; 
+
+  @include breakpoint(600px) {
+    height: 31.51041667vw;
+    width: 31.51041667vw;
+  }
+}
+
+@mixin mediumContainer {
+  height: 70.04533333vw;
+  width: 77.73333333vw;
+
+  @include breakpoint(600px) {
+    width: 27.99479167vw;
+    height: 47.52604167vw;
+  }
+}
+
+// GOLD BARS ------------------------------------
+
+@mixin smallGoldBar($deg) {
+  background-color: $gold;
+  width: 48vw;
+  position: relative;
+
+  @include breakpoint(600px) {
+    width: 32vw;
+  }
+
+  &:after {
+    @include skew($deg);
+    background-color: $gold;
+    box-shadow: 0px -3px 5px 0px rgba(0, 22, 34, 0.2);
+    z-index: -1;
+    height: 90%;
+    width: 48vw;
+  }
+}
+
+@mixin mediumGoldBar {
+  height: 6.666666667vw;
+  width: 80vw;
+  background-color: $gold;
+  position: relative;
+
+  &:after {
+    @include skew(-2.3deg);
+    background-color: $gold;
+    transform-origin: 0;
+    box-shadow: 0px -3px 2px -1px rgba(0, 22, 34, 0.4);
+  }
+
+  @include breakpoint(600px) {
+    height: 3.255208333vw;
+    width: 28.4vw;
+  }
+}
+
+@mixin largeGoldBar {
+  width: 100%;
+  height: 8vw;
+  background-color: $gold;
+
+  @include breakpoint(600px) {
+    height: 4vw;
+  }
+
+  &:after {
+    background-color: $gold;
+    box-shadow: 0px -3px 2px -1px rgba(0, 22, 34, 0.4);
+    @include skew(2.3deg);
+  }
+}
+
+// SKEW ------------------------------------
+
+
+@mixin skew($amount) {
+  transform: skewY($amount);
+  transform-origin: 100%;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+
+  @include breakpoint(600px) {
+    height: 100%;
+  }
+}
+
+@mixin heroSkew($deg) {
+  transform: rotate($deg);
+  z-index: -1;
+}
+
+// SECTION HEADERS AND FOOTERS ------------------------------------
+
+@mixin sectionHeader {
+  transform: rotate(-2deg);
+  font-size: $mediumFontMobile;
+  margin-left: $mediumBreakMobile;
+  margin-bottom: 0 - $mediumBreakMobile;
+  padding: 0.65rem 0.55rem 0.45rem 0.55rem;
+  @include redBox;
+}
+
+@mixin sectionFooter {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 0 - $mediumBreakMobile;
+  font-size: $xsFontMobile;
+
+  span {
+    @include redBox;
+    margin-right: $mediumBreakMobile;
+    padding: 0.65rem 0.55rem 0.5rem 0.55rem;
+  }
+}
+
+@mixin redBox {
+  color: $gray;
+  text-transform: uppercase;
+  letter-spacing: 0.07rem;
+  background: $lightRed;
+  @include buttonShadow;
+  z-index: 2;
+
+  @include breakpoint(600px) {
+    font-size: 1.4625rem;
+    height: 2.5rem;
+    padding: 0.7rem 0.55rem 0rem 0.65rem;
+  }
+}
+
+// SHADOWS ------------------------------------
+
+@mixin buttonShadow {
+  box-shadow: 1px 1px 3px $darkBlue;
+}
+
+@mixin goldBarShadow {
+  box-shadow: -1px -1px 3px 0px $darkBlue;
+}
+
+// MISC ------------------------------------
+
+@mixin bgImg($filename) {  
+  background-image: url("../img/" + $filename);
+}
+
+
+@mixin teamsTextBreakpoints {
+  @include breakpoint(398px) {
+    width: 57%;
+  }
+
+  @include breakpoint(441px) {
+    width: 58%;
+  }
+
+  @include breakpoint(449px) {
+    width: 59%;
+  }
+
+  @include breakpoint(460px) {
+    width: 60%;
+  }
+
+  @include breakpoint(470px) {
+    width: 61%;
+  }
+
+  @include breakpoint(482px) {
+    width: 62%;
+  }
+
+  @include breakpoint(493px) {
+    width: 63%;
+  }
+
+  @include breakpoint(506px) {
+    width: 64%;
+  }
+
+  @include breakpoint(520px) {
+    width: 65%;
+  }
+
+  @include breakpoint(534px) {
+    width: 66%;
+  }
+
+  @include breakpoint(549px) {
+    width: 67%;
+  }
+
+  @include breakpoint(568px) {
+    width: 68%;
+  }
+
+  @include breakpoint(585px) {
+    width: 69%;
+  }
+}
+
+@mixin heroSkewBreakPoints {
+  
+
+  &:before {
+   @include heroSkew(-12.8deg);
+
+   @include breakpoint(619px) {
+     @include heroSkew(-12.6deg);
+   }
+
+   @include breakpoint(636px) {
+     @include heroSkew(-12.14deg);
+   }
+
+   @include breakpoint(662px) {
+     @include heroSkew(-11.8deg);
+   }
+
+   @include breakpoint(685px) {
+     @include heroSkew(-11.4deg);
+   }
+
+   @include breakpoint(710px) {
+     @include heroSkew(-11deg);
+   }
+
+   @include breakpoint(728px) {
+     @include heroSkew(-10.7deg);
+   }
+
+   @include breakpoint(749px) {
+     @include heroSkew(-10.5deg);
+   }
+
+   @include breakpoint(760px) {
+     @include heroSkew(-10.2deg);
+   }
+
+   @include breakpoint(780px) {
+     @include heroSkew(-10deg);
+   }
+    
+  }
+}
+

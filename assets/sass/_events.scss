@@ -1,104 +1,88 @@
-.events {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  margin-top: 15%;
-}
+.section-list.section-list--events {
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	padding: $xsBreakMobile;
 
-.headline-events {
-  top: 2%;
-  left: 3%;
+	li {
+		position: relative;
 
-  & span {
-    background: $lightred;
-    padding: 3% 4%;
-  }
-}
+		figure {
+			@include smallContainer;
+			background-size: auto 110%;
+			background-position: top center;
+			color: $white;
+			text-shadow: 0 0 2px $darkBlue;
+			text-transform: uppercase;
+			font-weight: 800;
+		}
 
-.event__articles {
-  display: flex;
-  flex-direction: column;
+		.small-gold-bar {
+			margin-bottom: $mediumBreakMobile;
+			z-index: 3;
+			display: flex;
+			justify-content: flex-end;
+			align-items: flex-end;
+			flex-wrap: wrap;
+			color: $grey;
+			text-transform: capitalize;
+			
+			h2, date {
+				width: 100%;
+				height: 100%;
+				background-color: $gold;
+				padding: $smallBreakMobile;
+			}
 
-  @media screen and (min-width: $med-break) {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
+			date {
+				font-size: $xsFontMobile;
+				padding-top: 0;
+			}
 
-  .article {
-    display: flex;
-    flex-direction: column;
+			h2 {
+				font-size: $mediumFontMobile;
+			}
+		}
 
-    @media screen and (min-width: $med-break) {
-      width: 50%;
-    }
-    
-    .event__article {
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      width: 80%;
-      height: 200px;
-      position: relative;
-      margin: 10%;
-      margin-top: 30px;
-      padding: 20% 20px;
-      border: 2px solid $darkred;
-    }
+		&:nth-child(even) {
+			.small-gold-bar {
+				text-align: right;
+				@include smallGoldBar(-3deg);
+				&:after {
+					transform-origin: 0;
+				}
+			}
+		}
 
-    .event__article1 {
-      background-image: url(../img/stadiumwithfalcon.jpg);
-    }
+		&:nth-child(odd) {
+			.small-gold-bar {
+				@include smallGoldBar(3deg);
+			}
+		}
 
-    .event__article2 {
-      background-image: url(../img/KennyChesney.jpg);
-    }
+		&:first-child {
+			figure {
+				@include bgImg('stadiumwithfalcon.jpg');
+			}
+		}
 
-    .event__article3 {
-      background-image: url(../img/stadiumfront.jpg);
-    }
+		&:nth-child(2) {
+			figure {
+				@include bgImg('KennyChesney.jpg');
+			}
+		}
 
-    .event__article4 {
-      background-image: url(../img/GraveDigger.jpg);
-    }
+		&:nth-child(3) {
+			figure {
+				@include bgImg('stadiumfront.jpg');
+			}
+		}
 
-    .golden-div {
-      width: 82%;
-      position: relative;
-      z-index: 7;
-      background: $gold;
-      color: $gray;
-      margin-top: -12%;
-      margin-left: 9%;
-      padding: 2% 3%;
+		&:last-child {
+			figure {
+				@include bgImg('GraveDigger.jpg');
+			}
+		}
 
-      & h2 {
-        font-size: 1rem;
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
-
-      & p {
-        font-size: .8rem;
-      }
-
-      // @media screen and (min-width: $med-break) {
-      //   width: 32%;
-      // }
-
-      &:before {
-        content: '';
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        background: $gold;
-        transform: skewY(2deg);
-        transform-origin: 100%;
-        z-index: -1;
-      }
-    }
-  }
+	}
 }

@@ -1,169 +1,352 @@
-
-.stadium__teams {
-	display: none;
+.teams {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-top: $xxlBreakMobile;
 	position: relative;
+	color: $darkBlue;
 
-	@media screen and (min-width: $med-break) {
-		margin: 0 auto;
-		margin-top: 10%;
+	.teams-section {
+		background-color: $grey;
+		width: 100%;
+		position: relative;
 		display: flex;
+		flex-wrap: wrap;
+		min-height: 100vw;
+		background-size: auto 95%;
+		background-repeat: no-repeat;
+		justify-content: flex-start;
+		padding: 0 $mediumBreakMobile;
 
-		min-height: 400px;
-		height: 100vh;
-		max-height: 600px;
-
-		.teams__background {
-			position: absolute;
-			z-index: 10;
-			background-image: url(../../assets/img/hourglass.png);
-			background-repeat: no-repeat;
-			background-size: cover;
-			width: 100%;
-			height: 100%;
-
-			max-width: 1000px;
-			margin: 0 auto;
-
+		@include breakpoint(600px) {
+			background-size: auto 61vw;
 		}
-	}
 
-	.united-desktop {
-		display: none;
 
-		@media screen and (min-width: $med-break) {
-			position: relative;
-			z-index: 11;
-			margin-top: 200px;
+		h2 {
 			display: flex;
-			flex-direction: row-reverse;
-			align-items: center;
-			width: 50%;
-		}
-
-		.united__text {
-			width: 45%;
-		    //margin-top: 15%;
-		    margin-right: 5%;
-		    z-index: 10;
-		    text-align: right;
-
-		    & p {
-			    line-height: 1.5;
-			    font-weight: 100;
-			    margin-bottom: 2.5vh;
-		    }
-
-		    .united__learn-button {
-		    	background: $gold;
-		    	color: $white;
-		    	font-weight: 100;
-		    	border: none;
-		    	border-radius: 0;
-		    	text-transform: uppercase;
-		    	margin-bottom: 5vh;
-		    	padding: 5%;
-
-		    	@media screen and (min-width: $med-break) {
-			    	padding: 3% 4%;
-		    	}
-		    }
-
-		    .united__homegame {
-		    	font-size: .8rem;
-		    	color: #000;
-		    	border-right: 2px solid $gold;
-		    	padding-right: 20px;
-		    	text-transform: uppercase;
-		    	margin-bottom: 1vh;
-		    }
-
-		    .united__nextgame {
-				font-size: 2rem;
-				color: $gold;
-				font-weight: bold;
-				margin-bottom: 2vh;
-				text-transform: uppercase;
-		    }
-
-		    .united__gamedate {
-		    	color: $gold;
-		    	font-size: .8rem;
-		    	font-weight: 100;
-		    	margin-bottom: 2.5vh;
-		    }
-
-		    .united__gameday-button {
-		    	background: #000;
-		    	color: $white;
-		    	padding: 5%;
-		    	//border-bottom: 3px solid transparent;
-		    	border: none;
-		    	border-radius: 0;
-		    	text-transform: uppercase;
-
-		    	@media screen and (min-width: $med-break) {
-			    	padding: 3% 4%;
-		    	}
-
-		    	// &:hover{
-		    	// 	border-bottom: 5px solid $lightred;
-		    	// }
-		    }
-		}
-
-		.hectorvillalba {
-			background-image: url(../img/united-player-3.png);
-			background-repeat: no-repeat;
-			width: 70%;
-			height: 500px;
-			background-size: contain;
-			background-position: left;
-		    top: 0;
-		    left: -10%;
-			z-index: 10;
+			text-transform: uppercase;
+			color: $grey;
+			padding: $smallBreakMobile;
+			padding-top: $mediumBreakMobile;
+			width: 100%;
+			margin-top: (0 - $xlBreakMobile);
 			position: absolute;
 
-			@media screen and (min-width: 500px) {
-			  left: -5%;
+			div {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				padding: 0.9rem 0.6rem 0.5rem 0.65rem;
+				min-width: 8.5rem;
+				@include buttonShadow;
+				color: $darkBlue;
+				letter-spacing: 0.1rem;
+				font-size: $smallFontMobile;
+
+				.teams-header {
+					font-size: $xlFontMobile;
+					font-weight: 800;
+					color: $grey;
+					letter-spacing: 0.2rem;
+					margin-top: $xsBreakMobile;
+				}
+
+				@include breakpoint(450px) {
+					font-size: $mediumFontMobile;
+					min-width: 9.7rem;
+
+					.teams-header {
+						font-size: $xxlFontMobile;
+					}
+				}
+			}
+		}
+
+		.teams-text {
+			width: 52%;
+			font-size: $smallFontMobile;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			margin-top: $xlBreakMobile;
+
+			li {
+				margin-bottom: $largeBreakMobile;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+
+				p {
+					line-height: $mediumFontMobile + 0.5rem;
+				}
+
+
+				button {
+					text-transform: uppercase;
+					color: $grey;
+					padding: 0.7rem;
+					padding-top: 0.9rem;
+					padding-bottom: 0.5rem;
+					font-size: $largeFontMobile;
+					border-radius: 5px;
+					@include buttonShadow;
+				}
+
+				div {
+					display: flex;
+					flex-direction: column;
+					margin-top: $xsBreakMobile * 2;
+
+					p {
+						font-size: $largeFontMobile;
+						font-style: italic;
+						font-weight: 800;
+						padding: 0 0.1rem;
+					}
+				}
+
+				h3 {
+					display: flex;
+					flex-direction: column;
+
+					span, date {
+						text-transform: uppercase;
+					}
+
+					span {	
+						font-size: $smallFontMobile;
+						margin-bottom: $xsBreakMobile;
+
+						&:first-child {
+							padding: 0.1rem;
+							padding-top: 0.25rem;
+							padding-bottom: 0;
+							margin-bottom: $smallBreakMobile;
+							height: $mediumFontMobile;
+						}
+
+						&:nth-child(2) {
+							font-size: $xxxlFontMobile;
+							font-weight: 800;
+							margin-bottom: 0;
+						}
+					}
+
+					date {
+						font-size: $xsFontMobile;
+					}
+				}
+
+				&:last-child {
+					button {
+						background-color: $darkBlue;
+						color: $grey;
+						font-size: $mediumFontMobile;
+						margin-top: $mediumBreakMobile;
+						@include buttonShadow;
+					}
+				}
 			}
 
-			@media screen and (min-width: $med-break) {
-			  left: 0%;
+			@include breakpoint(450px) {
+				font-size: $mediumFontMobile;
+
+				li {
+					button {
+						font-size: $xlFontMobile;
+					}
+
+					div {
+						margin-top: $mediumBreakMobile;
+
+						p {
+							font-size: $xlFontMobile;
+						}
+					}
+
+					&:last-child {
+						button {
+							font-size: $largeFontMobile;
+						}
+					}
+				}
 			}
+			
+			// @include teamsTextBreakpoints;
+		}
+
+		&:before {
+			background-color: $grey;
+		}
+
+		&.teams-section__falcons {
+			margin-bottom: $xxlBreakMobile;
+			@include bgImg('hero_img_1.png');
+			background-position: 95% center;
+			flex-direction: row;
+
+			h2 {
+				flex-direction: row;
+
+				div {
+					background-color: $lightRed;	
+				}
+			}
+
+			.teams-text {
+
+				li {
+					align-items: flex-start;
+
+					div {
+						align-items: flex-start;
+
+						button {
+							background-color: $lightRed;
+						}
+					}
+
+					h3 {
+						align-items: flex-start;
+
+						span {
+							&:first-child {
+								border-left: $thinBorder $lightRed;
+								padding-left: $mediumBreakMobile;
+							}
+
+							&:nth-child(2) {
+								color: $lightRed;
+							}
+						}
+
+						date {
+							color: $lightRed;
+						}
+					}
+				}
+			}
+
+			&:before {
+				@include skew(-3deg);
+				transform-origin: 0;
+			}
+		}
+
+		&.teams-section__united {
+			@include bgImg('hero_img_2.png');
+			background-position: 5% center;
+			flex-direction: row-reverse;
+
+			h2 {
+				flex-direction: row-reverse;
+
+				div {
+					background-color: $gold;
+					align-items: flex-end;	
+				}
+			}
+
+			.teams-text {
+
+				li {
+					align-items: flex-end;
+					text-align: right;
+
+					div {
+						align-items: flex-end;
+
+						button {
+							background-color: $gold;
+						}
+
+					}
+
+					h3 {
+						span {
+							&:first-child {
+								border-right: $thinBorder $gold;
+								padding-right: $mediumBreakMobile;
+							}
+
+							&:nth-child(2) {
+								color: $gold;
+							}
+						}
+
+						date {
+							color: $gold;
+						}
+					}
+				}
+			}
+
+			&:before {
+				@include skew(3deg);
+			}
+
+		}
+
+		@include breakpoint(450px) {
+			min-height: 120vw;
+			padding: 0 ($mediumFontMobile + $smallBreakMobile);
 		}
 	}
 
-	.headline-united {
-		display: flex;
-		flex-direction: column;
-		right: 5%;
-		margin-top: -300px;
+	@include breakpoint(600px) {
+		flex-direction: row-reverse;
+		@include bgImg('hourglass.svg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		height: 700px;
+		justify-content: space-between;
 
+		.teams-section {
+			width: 50%;
+			min-height: 0;
+			height: 100%;
+			background-color: transparent;
+			padding: 0 $mediumBreakMobile;
 
-		& span {
-			background: $gold;
-			padding: 4%;
-			text-align: right;
+			&:before {
+				display: none;
+			}
+
+			.teams-text {
+				justify-content: center;
+				height: 100%;
+				padding: 0;
+				padding-bottom: $xlBreakMobile;
+
+				li {
+					margin-bottom: 150px;
+
+					.main-copy {
+						min-height: 12rem;
+						min-width: 12rem;
+						max-width: 16.9rem;
+						// text-align: justify;
+					}
+				}
+			}
+
+			&.teams-section__falcons {
+				background-size: auto 30rem;
+				background-position: 118% 80%;
+			}
+
+			&.teams-section__united {
+				background-size: auto 28.44rem;
+				background-position: -9% 80%;
+			}
+
 		}
 
-		.united-atlanta-span {
-			color: $darkblue;
-		}
-
-		.united-span {
-			font-size: 2.5rem;
-			color: $gray
+		@include breakpoint(760px) {
+			height: 800px;
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-

@@ -12,176 +12,165 @@
 		<link rel="stylesheet" href="assets/css/main.css">
 	</head>
 	<body>
-
-		<header>
+		<header class="header">
 			<a href="#" class="header__logo"></a>
-			<div class="hamburger__menu">
+			<div class="hamburger__button">
 				<div class="hamburger-line hamburger-line1"></div>
 				<div class="hamburger-line hamburger-line2"></div>
 				<div class="hamburger-line hamburger-line3"></div>
 				<p>Menu</p>
 			</div>
 
-			<nav class="header__nav">
-				<ul>
-					<li><a href="">Stadium</a></li>
-					<li><a href="">Plan your visit</a></li>
-					<li><a href="">Atlanta Falcons</a></li>
-					<li><a href="">Atlanta United</a></li>
-					<li><a href="">Events</a></li>
-					<li><a href="">Community Impact</a></li>
-				</ul>
-			</nav>
+			<ul class="header__nav">
+				<li><a href="">Stadium</a></li>
+				<li><a href="">Plan your visit</a></li>
+				<li><a href="">Atlanta Falcons</a></li>
+				<li><a href="">Atlanta United</a></li>
+				<li><a href="">Events</a></li>
+				<li><a href="">Community Impact</a></li>
+			</ul>
 		</header>
+		<main>
+			<div id="background"></div>
 
-		<section class="hero">
-			<div class="hero__image"></div>
-			<div class="hero__text">
-				<div class="hero__text-headlines">
-					<h1>2018 Season Ticket Priority</h1>
-					<p>Reserve your spot in line today!</p>
+			<section>
+				<ul class="section-list section-list--hero">
+					<li class="section-list__page">
+						<figure class="section-list__img"></figure>
+						<div class="hero__text">
+							<div class="hero-tablet-angle"></div>
+							<h1>2018 Season Ticket Priority</h1>
+							<p>Reserve your spot in line today!</p>
+							<ul class="hero__links">
+								<li>learn more</li>
+								<li>view seats</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<h1 class="section-header">news</h1>
+				<ul class="section-list section-list--news">
+					<li class="section-list__page">
+						<figure>
+							<h2>taylor swift adds second show at mercedes benz stadium</h2>
+						</figure>
+						<div class="medium-gold-bar"></div>
+					</li>
+				</ul>
+				<div class="section-footer">
+					<span>learn more</span>
 				</div>
-				<div class="hero__text-options">
-					<h4>Learn More</h4>
-					<h4>View Seats</h4>
-				</div>
-			</div>
-		</section>
+			</section>
 
+			<section class="explore">
+				<h1 class="section-header">explore the stadium</h1>
+				<video src="assets/video/mbs-9-22-17.mp4" class="explore__video" id="explore__video" loop="loop">
+				</video>
+				<div class="large-gold-bar"></div>
+				<button class="section-footer">
+					<span>see fly-through video</span>
+				</button>
+			</section>
 
-		<section class="news">
-			<!-- <div class="bigM bigM1"></div> -->
-			<h2 class="headline headline-news"><span>News</span></h2>
-			<div class="article">
-				<div class="news__article"></div>
-				<div class="golden-div">
-					<h2>Taylor Swift Adds Second Show at Mercedes-Benz Stadium</h2>
-					<p>November, 28 2017</p>
-				</div>
-			</div>
-		</section>
-
-		<section class="explore">
-			<h2 class="headline headline-explore"><span>Explore the stadium</span></h2>
-			<video src="assets/video/mbs-9-22-17.mp4" class="explore__video" id="explore__video"></video>
-			<div class="golden-div-2"></div>
-			<h2 class="headline explore-video-button"><span>See fly-through video</span></h2>
-		</section>
-
-<!-- 		<section class="halfLetters">
-			<div class="halfM halfM1"></div>
-		</section> -->
-
-
-		<section class="falcons">
-			<h2 class="teams-headline headline-falcons">
-				<span>Atlanta</span>
-				<span class="falcons-span">Falcons</span>
-			</h2>
-			<div class="falcons__text">
-				<p>
-					Mercedes-Benz Stadium is the new home of the Atlanta Falcons in 2017. Check out the full schedule and explore the new Fan First stadium experience to prepare for the season. Rise Up!
-				</p>
-				<button class="falcons__learn-button">Learn More</button>
-				<h4 class="falcons__homegame">Next Home Game</h4>
-				<h2 class="falcons__nextgame">Saints</h2>
-				<h4 class="falcons__gamedate">DECEMBER 7, 2017<br>8:25 PM</h4>
-				<button class="falcons__gameday-button">Gameday</button>
-			</div>
-			<div class="mattryan"></div>
-		</section>
-
-		<section class="united">
-			<h2 class="teams-headline headline-united">
-				<span class="united-atlanta-span">Atlanta</span>
-				<span class="united-span">United</span>
-			</h2>
-			<div class="united__text">
-				<p>
-					The tracks have led us here. To more than a stadium. To the heartbeat of the south. Our chants. Our Passion. Our House. Unite &amps; Conquer.
-				</p>
-				<button class="united__learn-button">Learn More</button>
-				<h4 class="united__homegame">Next Home Game</h4>
-				<h2 class="united__nextgame">Toronto</h2>
-				<h4 class="united__gamedate">April 7, 2018<br>6:25 PM</h4>
-				<button class="united__gameday-button">Gameday</button>
-			</div>
-			<div class="hectorvillalba"></div>
-		</section>
-
-		<section class="stadium__teams">
-			<div class="teams__background"></div>
-				<section class="united-desktop">
-					<h2 class="teams-headline headline-united">
-						<span class="united-atlanta-span">Atlanta</span>
-						<span class="united-span">United</span>
+			<section class="teams">
+				<article class="teams-section teams-section__falcons">
+					<h2>
+						<div>
+							<span>atlanta</span>
+							<span class="teams-header">falcons</span>
+						</div>
 					</h2>
-					<div class="united__text">
-						<p>
-							The tracks have led us here. To more than a stadium. To the heartbeat of the south. Our chants. Our Passion. Our House. Unite &amps; Conquer.
-						</p>
-						<button class="united__learn-button">Learn More</button>
-						<h4 class="united__homegame">Next Home Game</h4>
-						<h2 class="united__nextgame">Toronto</h2>
-						<h4 class="united__gamedate">April 7, 2018<br>6:25 PM</h4>
-						<button class="united__gameday-button">Gameday</button>
-					</div>
-					<div class="hectorvillalba"></div>
-				</section>
-		</section>
+					<ul class="teams-text">
+						<li>
+							<p class="main-copy">Mercedes-Benz Stadium is the new home of the Atlanta Falcons in 2017. Check out the full schedule and explore the new Fan First stadium experience to prepare for the season.</p>
+							<div>
+								<p>Rise Up!</p>
+								<button>learn more</button>
+							</div>
+						</li>
+						<li>
+							<h3>
+								<span>next home game</span>
+								<span>saints</span>
+								<date>
+									december 7, 2017<br >
+									8:25pm
+								</date>
+							</h3>
+							<button class="gameday">gameday</button>
+						</li>
+					</ul>
+				</article>
+				<article class="teams-section teams-section__united">
+					<h2>
+						<div>
+							<span>atlanta</span>
+							<span class="teams-header">united</span>
+						</div>
+					</h2>
+					<ul class="teams-text">
+						<li>
+							<p class="main-copy">You are not just a fan. You are United. When we bleed, you bleed. When we celebrate, you celebrate. Every gut-wrenching loss. Every glorious win. We battle for 90 minutes, together. From day one. </p>
+							<div>
+								<p>We are United.</p>
+								<button>learn more</button>
+							</div>
+						</li>
+						<li>
+							<h3>
+								<span>next home game</span>
+								<span>toronto</span>
+								<date>
+									april 7, 2017<br />
+									6:25pm
+								</date>
+							</h3>
+							<button class="gameday">gameday</button>
+						</li>
+					</ul>
+				</article>
+			</section>
 
-		<section class="events">
-			<h2 class="headline headline-events"><span>Upcoming Events</span></h2>
-			<div class="event__articles">
-				<div class="article">
-					<div class="event__article event__article1"></div>
-					<div class="golden-div">
-						<h2>2017 Celebration Bowl</h2>
-						<p>December, 16 2017</p>
-					</div>
+			<section>
+				<h1 class="section-header">upcoming events</h1>
+				<ul class="section-list section-list--events">
+					<li class="section-list__page">
+						<figure></figure>
+						<div class="small-gold-bar">
+							<h2>2017 celebration bowl</h2>
+							<date>december 16, 2017</date>
+						</div>
+					</li>
+					<li class="section-list__page">
+						<figure></figure>
+						<div class="small-gold-bar">
+							<h2>kenny chesney</h2>
+							<date>may 26, 2018</date>
+						</div>
+					</li>
+					<li class="section-list__page">
+						<figure></figure>
+						<div class="small-gold-bar">
+							<h2>chick-fil-a peach bowl</h2>
+							<date>january 1, 2018</date>
+						</div>
+					</li>
+					<li class="section-list__page">
+						<figure></figure>
+						<div class="small-gold-bar">
+							<h2>2018 monster jam</h2>
+							<date>february 24-28, 2018</date>
+						</div>
+					</li>
+				</ul>
+				<div class="section-footer">
+					<span>more upcoming events</span>
 				</div>
-				<div class="article">
-					<div class="event__article event__article2"></div>
-					<div class="golden-div">
-						<h2> Kenny Chesney with Thomas Rhett, Old Dominion, &amps; Brandon Lay</h2>
-						<p>May, 26 2018</p>
-					</div>
-				</div>
-				<div class="article">
-					<div class="event__article event__article3"></div>
-					<div class="golden-div">
-						<h2>Chick-fil-A Peach Bowl</h2>
-						<p>January, 1 2018</p>
-					</div>
-				</div>
-				<div class="article">
-					<div class="event__article event__article4"></div>
-					<div class="golden-div">
-						<h2>2018 Monster Jam</h2>
-						<p>Februar, 24-25 2018</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+			</section>
+		</main>
 
 		<footer>
 			<div class="footer__text">
@@ -240,37 +229,7 @@
 			<p class="copyright">&copy; 2016-2017</p>
 		</footer>
 
-		<div class="background__styles">
-			<div class="letterM1"></div>
-		</div>
-
-
-
-
-
-		<div id="background">
-			<figure class="dark-blue vertical"></figure>
-			<figure class="light-blue horizontal"></figure>
-			<figure class="dark-blue horizontal"></figure>
-			<figure class="light-blue vertical"></figure>
-			<figure class="dark-blue horizontal"></figure>
-			<figure class="light-blue horizontal"></figure>
-		</div>
-
-
-
-
-
-
-
-		<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
-		<script src="assets/js/jquery.scrollTo.js"></script>		
-		<script src="assets/js/jquery.waypoints.js"></script>	
-
-		<script src="https://use.fontawesome.com/92ef1f4ebd.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-		<script src="assets/js/carousel.js"></script>
+		
 		<script src="assets/js/main.js"></script>
 	</body>
 </html>

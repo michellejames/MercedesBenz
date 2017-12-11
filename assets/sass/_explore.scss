@@ -1,61 +1,26 @@
 .explore {
 	display: flex;
-	flex-direction: column;
 	position: relative;
-	margin-top: 10%;
-}
-
-.headline-explore {
-	left: 3%;
-	//margin-top: 10%;
-
-	& span {
-		background: $lightred;
-		padding: 2% 3%;
-	}
-}
-
-.explore__article {
-	// background-image: url(../img/slideshow/falcons.jpg);
-	// background-repeat: no-repeat;
-	// background-size: cover;
-	// background-position: center;
-	// width: 100%;
-	// height: 60vh;
-	// position: relative;
-	// margin-top: 15%;
-	// padding: 20% 20px;
-}
-
-.explore__video {
-	width: 100%;
-	height: 50%;
-}
-
-.golden-div-2 {
-	width: 100%;
-	height: 30px;
-	position: relative;
-	background: $gold;
-	// margin-top: -3%;
-
-	@media screen and (min-width: $med-break) {
-		height: 50px;
-	}
-
-	&:before {
-		content: '';
-		display: block;
-		position: absolute;
+	
+	video {
 		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		right: 0;
-		background: $gold;
-		transform: skewY(-2deg);
-		transform-origin: 0 100%;
-		z-index:6;
-	}
-}
+		height: 56.5%;
+		position: relative;
+		margin-bottom: 0 - $xsBreakMobile;
 
+		@include breakpoint(600px) {
+			height: 56.25vw;
+		}
+	}
+
+	.large-gold-bar {
+		@include largeGoldBar;
+		position: relative;
+		z-index: 2;
+	}
+
+	.section-footer {
+		padding: 0;
+	}
+
+}

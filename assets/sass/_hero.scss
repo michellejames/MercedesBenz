@@ -1,119 +1,212 @@
-
-.hero {
-	background: $darkblue;
-
-	.hero__image {
-		background-image: url(../img/slideshow/falcons.jpg);
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center;
-		width: 100%;
-		height: 60vh;
-		position: relative;
-		z-index: 5;
-		padding: 20% 20px;	
-
-		@media screen and (min-width: 900px) {
-			height: 80vh;
-		}
-	}
-
-	.hero__text {
-		padding: 5%;
-		color: $white;
-		position: relative;
-		z-index:6;
-		border-bottom: 3px solid $darkred;
-
-		@media screen and (min-width: $med-break) {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-		}
-
-		@media screen and (min-width: 900px) {
-			padding: 2%;
-		}
-
-		&:before {
-			content: '';
-			display: block;
-			height: 50%;
-			left: 0;
-			position: absolute;
-			right: 0;
-			background: $darkblue;
-			top: 0;
-			transform: skewY(-2deg);
-		    transform-origin: 0 100%;
-			border-top: 3px solid $darkred;
-
-			@media screen and (min-width: 900px) {
-				transform: skewY(2deg);
-				transform-origin: 100%;
-			}
-		}
-		
-
-		.hero__text-headlines {
-
-			position: relative;
-			width: 95%;
+.section-list {
+	overflow: hidden;
+	
+	&.section-list--hero {
+		.section-list__page {
 			display: flex;
 			flex-direction: column;
-			margin-bottom: 3%;
-			margin-left: 5%;
-			z-index: 7;
+			justify-content: flex-end;
+			width: 100%;
+			color: $grey;
 
-			@media screen and (min-width: $med-break) {
-				width: 45%;
+			@include breakpoint(600px) {
+				align-items: flex-start;
 			}
 
+			.section-list__img {
+				width: 100%;
+				@include bgImg("slideshow/falcons.jpg");
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				height: 340px;
+				border: none;
+
+				@include breakpoint(500px) {
+					height: 400px;
+				}
+
+				@include breakpoint(600px) {
+					// height: 39vh;
+					border-right: none;
+					border-left: none;
+				}
+			}
+
+			.hero__text {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				background-color: $darkBlue;
+				padding: $mediumBreakMobile;
+				border-bottom: $thinBorder $darkRed;
+				z-index: 1;
+
+				&:before {
+					@include skew(2.3deg);
+					border-top: $thinBorder $darkRed;
+					z-index: -1;
+					background-color: $darkBlue;
+
+					@include breakpoint(600px) {
+						display: none;
+					}
+				}
 
 				h1 {
-					font-size: 1.7rem;
-					margin-bottom: 3%;
-					font-weight: bold;
+					font-size: $xlFontMobile;
+					margin-bottom: $xsBreakMobile;
+					font-weight: 800;
 				}
 
 				p {
-					font-size: 1rem;
 					font-weight: 100;
-					color: $gray;
-					margin-bottom: 3%;
-					text-align: left;
+					font-size: $smallFontMobile;
 				}
-		}
 
+				.hero__links {
+					text-transform: uppercase;
+					display: flex;
+					margin-top: $mediumBreakMobile;
+					justify-content: space-around;
+					letter-spacing: 0.0rem;
+					font-size: $mediumFontMobile;
+					font-weight: 800;
 
-		.hero__text-options {
-			display: flex;
-			justify-content: space-around;
-			z-index: 10;
+					li {
+						padding-bottom: 2px;
+						border-bottom: $thinBorder $lightRed;
+					}
+				}
 
-			@media screen and (min-width: $med-break) {
-				width: 45%;
+				@include breakpoint(375px) {
+					padding: $mediumBreakMobile + $smallBreakMobile;
+
+					h1 {
+						font-size: $xxlFontMobile;
+					}	
+
+					.hero__links {
+						font-size: $xlFontMobile;
+					}	
+				}
+
+				@include breakpoint(400px) {
+					padding: ($mediumBreakMobile + $xsBreakMobile) $largeBreakMobile;
+				}
+
+				@include breakpoint(500px) {
+					padding: ($mediumBreakMobile + $xsBreakMobile) ($largeBreakMobile + $smallBreakMobile);
+
+					h1 {
+						font-size: $xxlFontMobile + 0.25rem;
+					}
+
+					p {
+						font-size: $mediumFontMobile;
+					}
+				}
+
+				@include breakpoint(600px) {
+					padding: 0;
+					border: none;
+
+					h1, p, .hero__links {
+						padding-left:  $largeBreakMobile;
+						z-index: 3;
+					}
+
+					h1 {
+						font-size: $xlFontMobile;
+						margin-bottom: $xsBreakMobile;
+						background-color: $darkBlue;
+						width: 100%;
+						z-index: 3;
+						padding-top: $mediumBreakMobile;
+					}
+
+					p {
+						
+					}
+
+					.hero__links {
+						margin-top: 15px;
+						justify-content: flex-start;
+						font-size: $smallFontMobile;
+						padding-bottom: $mediumBreakMobile;
+						border-bottom: $thinBorder $darkRed;
+
+						li {
+							margin-right: $largeBreakMobile;
+						}
+					}
+
+					.hero-tablet-angle {
+						display: block;
+						position: absolute;
+						width: 100%;
+						height: 150%;
+						background-color: $darkBlue;
+						z-index: 2;
+						border-top: $thinBorder $darkRed;
+						top: -3px;
+
+						&:before {
+							@include skew(-23deg);
+							background-color: $darkBlue;
+							z-index: -2;
+							transform-origin: 0;
+							margin-left: 53%;
+							border-top: $thinBorder $darkRed;
+
+						}
+					}
+
+					
+
+					// &:before {
+					// 	@include heroSkew(-12.8deg);
+
+					// 	@include breakpoint(619px) {
+					// 		@include heroSkew(-12.6deg);
+					// 	}
+
+					// 	@include breakpoint(636px) {
+					// 		@include heroSkew(-12.14deg);
+					// 	}
+
+					// 	@include breakpoint(662px) {
+					// 		@include heroSkew(-11.8deg);
+					// 	}
+
+					// 	@include breakpoint(685px) {
+					// 		@include heroSkew(-11.4deg);
+					// 	}
+
+					// 	@include breakpoint(710px) {
+					// 		@include heroSkew(-11deg);
+					// 	}
+
+					// 	@include breakpoint(728px) {
+					// 		@include heroSkew(-10.7deg);
+					// 	}
+
+					// 	@include breakpoint(749px) {
+					// 		@include heroSkew(-10.5deg);
+					// 	}
+
+					// 	@include breakpoint(760px) {
+					// 		@include heroSkew(-10.2deg);
+					// 	}
+
+					// 	@include breakpoint(780px) {
+					// 		@include heroSkew(-10deg);
+					// 	}
+						
+					// }
+				}
 			}
-
-			h4 {
-				font-size: 1.25rem;
-				text-transform: uppercase;
-				padding-bottom: 5px;
-				border-bottom: 5px solid $lightred;
-			}	
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

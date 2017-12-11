@@ -1,863 +1,827 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 16px; }
+
+html, body {
+  height: 100%;
+  width: 100%; }
+
+body {
+  position: relative; }
+
+button {
+  appearance: none;
+  border: none;
+  background: none; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+  a:hover {
+    color: inherit;
+    text-decoration: none; }
+
 @font-face {
   font-family: 'Korolev Light';
   font-style: normal;
   font-weight: normal;
   src: local("Korolev Light"), url("../../assets/font/KorolevLight.woff") format("woff"); }
 
-header {
-  position: relative;
-  background: #003950;
+body {
+  background-color: #003950;
+  font-family: 'Korolev Light';
+  overflow-x: hidden; }
+
+section {
   width: 100%;
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 2.10938rem;
+  position: relative; }
+  @media screen and (min-width: 600px) {
+    section {
+      margin-bottom: 4.88281vh; } }
+
+main {
+  width: 100%; }
+
+.section-header {
+  transform: rotate(-2deg);
+  font-size: 1.05rem;
+  margin-left: 0.9375rem;
+  margin-bottom: -0.9375rem;
+  padding: 0.65rem 0.55rem 0.45rem 0.55rem;
+  color: #D5D5D5;
+  text-transform: uppercase;
+  letter-spacing: 0.07rem;
+  background: #A61931;
+  box-shadow: 1px 1px 3px #001622;
+  z-index: 2; }
+  @media screen and (min-width: 600px) {
+    .section-header {
+      font-size: 1.4625rem;
+      height: 2.5rem;
+      padding: 0.7rem 0.55rem 0rem 0.65rem; } }
+
+.section-footer {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: -0.9375rem;
+  font-size: 0.75rem; }
+  .section-footer span {
+    color: #D5D5D5;
+    text-transform: uppercase;
+    letter-spacing: 0.07rem;
+    background: #A61931;
+    box-shadow: 1px 1px 3px #001622;
+    z-index: 2;
+    margin-right: 0.9375rem;
+    padding: 0.65rem 0.55rem 0.5rem 0.55rem; }
+    @media screen and (min-width: 600px) {
+      .section-footer span {
+        font-size: 1.4625rem;
+        height: 2.5rem;
+        padding: 0.7rem 0.55rem 0rem 0.65rem; } }
+
+header {
+  width: 100%;
+  position: relative;
+  display: flex;
   align-items: center;
-  padding: 2% 3%;
-  z-index: 10; }
+  flex-direction: row-reverse;
+  padding: 0.9375rem;
+  padding-bottom: 0.46875rem;
+  justify-content: space-between;
+  background-color: #001622; }
   header:after {
-    content: '';
-    display: block;
-    height: 50%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    background: #003950;
-    bottom: 0;
-    transform: skewY(-2deg);
+    background-color: #001622;
+    border-bottom: 3px solid #580614;
+    transform: skewY(-1.5deg);
     transform-origin: 100%;
-    border-bottom: 3px solid #580614; }
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    transform-origin: 100%;
+    z-index: 1; }
+    @media screen and (min-width: 600px) {
+      header:after {
+        height: 100%; } }
   header .header__logo {
-    background-image: url(../../assets/img/mbs-logo.svg);
+    background-image: url("../img/mbs-logo.svg");
     background-repeat: no-repeat;
-    width: 80px;
-    height: 50px;
-    z-index: 10; }
-    @media screen and (min-width: 900px) {
-      header .header__logo {
-        width: 150px; } }
-  header .header__nav, header .header__subnav {
-    display: none; }
-  header .hamburger__menu {
+    width: 60px;
+    height: 30px;
+    z-index: 3; }
+  header .hamburger__button {
     display: flex;
     flex-direction: column;
     align-items: center;
     z-index: 10; }
-    header .hamburger__menu .hamburger-line {
+    header .hamburger__button .hamburger-line {
       background: #A61931;
-      width: 45px;
-      height: 7px;
-      margin: 3px; }
-    header .hamburger__menu p {
+      width: 40px;
+      height: 5px;
+      margin: 2px 0; }
+    header .hamburger__button p {
       color: #FEFEFE;
       text-transform: uppercase;
-      font-size: .8rem;
+      font-size: 0.55rem;
       letter-spacing: 3px;
       margin-top: 5px; }
-  @media screen and (min-width: 900px) {
-    header {
-      flex-direction: row; } }
-
-@media screen and (min-width: 900px) {
+    @media screen and (min-width: 600px) {
+      header .hamburger__button {
+        display: none; } }
   header .header__nav {
-    display: flex; }
-    header .header__nav ul {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 120%;
-      z-index: 11; }
-      header .header__nav ul li {
-        margin-left: 15px; } }
-      @media screen and (min-width: 900px) and (min-width: 1000px) {
-        header .header__nav ul li {
-          margin-left: 40px; } }
+    padding-left: 20px;
+    padding-bottom: 10px;
+    position: fixed;
+    width: 250px;
+    top: 55px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    background-color: #001622;
+    transform: translateX(-100%);
+    opacity: 0; }
+    header .header__nav li {
+      width: 100%;
+      padding: 5px;
+      margin-top: 20px;
+      color: #FEFEFE;
+      border-bottom: 1px solid #D5D5D5;
+      text-transform: uppercase; }
 
-@media screen and (min-width: 900px) {
-        header .header__nav ul li a {
-          width: 100%;
-          text-decoration: none;
-          color: #fff;
-          font-size: 1rem;
-          font-weight: 100;
-          font-family: 'Korolev Light';
-          text-transform: uppercase; } }
-
-@media screen and (min-width: 900px) {
-  header .hamburger__menu {
-    display: none; } }
-
-.hero {
-  background: #001622; }
-  .hero .hero__image {
-    background-image: url(../img/slideshow/falcons.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 60vh;
-    position: relative;
-    z-index: 5;
-    padding: 20% 20px; }
-    @media screen and (min-width: 900px) {
-      .hero .hero__image {
-        height: 80vh; } }
-  .hero .hero__text {
-    padding: 5%;
-    color: #FEFEFE;
-    position: relative;
-    z-index: 6;
-    border-bottom: 3px solid #580614; }
-    @media screen and (min-width: 900px) {
-      .hero .hero__text {
-        display: flex;
-        justify-content: space-between;
-        align-items: center; } }
-    @media screen and (min-width: 900px) {
-      .hero .hero__text {
-        padding: 2%; } }
-    .hero .hero__text:before {
-      content: '';
-      display: block;
-      height: 50%;
-      left: 0;
-      position: absolute;
-      right: 0;
-      background: #001622;
-      top: 0;
-      transform: skewY(-2deg);
-      transform-origin: 0 100%;
-      border-top: 3px solid #580614; }
-      @media screen and (min-width: 900px) {
-        .hero .hero__text:before {
-          transform: skewY(2deg);
-          transform-origin: 100%; } }
-    .hero .hero__text .hero__text-headlines {
-      position: relative;
-      width: 95%;
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 3%;
-      margin-left: 5%;
-      z-index: 7; }
-      @media screen and (min-width: 900px) {
-        .hero .hero__text .hero__text-headlines {
-          width: 45%; } }
-      .hero .hero__text .hero__text-headlines h1 {
-        font-size: 1.7rem;
-        margin-bottom: 3%;
-        font-weight: bold; }
-      .hero .hero__text .hero__text-headlines p {
-        font-size: 1rem;
-        font-weight: 100;
-        color: #D5D5D5;
-        margin-bottom: 3%;
-        text-align: left; }
-    .hero .hero__text .hero__text-options {
-      display: flex;
-      justify-content: space-around;
-      z-index: 10; }
-      @media screen and (min-width: 900px) {
-        .hero .hero__text .hero__text-options {
-          width: 45%; } }
-      .hero .hero__text .hero__text-options h4 {
-        font-size: 1.25rem;
-        text-transform: uppercase;
-        padding-bottom: 5px;
-        border-bottom: 5px solid #A61931; }
-
-.news {
+.section-list {
   display: flex;
   flex-direction: column;
-  position: relative; }
-
-.headline-news {
-  top: 17%;
-  left: 3%; }
-  .headline-news span {
-    background: #A61931;
-    padding: 12%; }
-
-.article {
-  display: flex;
-  flex-direction: column; }
-  .article .news__article {
-    background-image: url(../img/slideshow/falcons.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 80%;
-    height: 265px;
-    position: relative;
-    margin: 10%;
-    margin-top: 70px;
-    padding: 20% 20px;
-    border: 2px solid #580614; }
-    @media screen and (min-width: 900px) {
-      .article .news__article {
-        width: 30%; } }
-  .article .golden-div {
-    width: 82%;
-    position: relative;
-    z-index: 7;
-    background: #817246;
-    color: #D5D5D5;
-    margin-top: -12%;
-    margin-left: 9%;
-    padding: 2% 3%; }
-    .article .golden-div h2 {
-      font-size: 1.5rem;
-      margin-bottom: 10px; }
-    .article .golden-div p {
-      font-size: .8rem; }
-    @media screen and (min-width: 900px) {
-      .article .golden-div {
-        width: 32%; } }
-    .article .golden-div:before {
-      content: '';
-      display: block;
-      position: absolute;
+  width: 100%;
+  overflow-x: hidden; }
+  .section-list .section-list__page {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 0;
+    position: relative; }
+    .section-list .section-list__page .medium-gold-bar {
+      position: relative;
+      display: flex;
+      z-index: 2;
+      height: 6.666666667vw;
+      width: 80vw;
+      background-color: #817246;
+      position: relative; }
+      .section-list .section-list__page .medium-gold-bar:after {
+        transform: skewY(-2.3deg);
+        transform-origin: 100%;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        background-color: #817246;
+        transform-origin: 0;
+        box-shadow: 0px -3px 2px -1px rgba(0, 22, 34, 0.4); }
+        @media screen and (min-width: 600px) {
+          .section-list .section-list__page .medium-gold-bar:after {
+            height: 100%; } }
+      @media screen and (min-width: 600px) {
+        .section-list .section-list__page .medium-gold-bar {
+          height: 3.255208333vw;
+          width: 28.4vw; } }
+    .section-list .section-list__page figure {
+      border: 3px solid #580614;
+      border-bottom: 0; }
+    .section-list .section-list__page .large-gold-bar {
       width: 100%;
+      height: 8vw;
+      background-color: #817246; }
+      @media screen and (min-width: 600px) {
+        .section-list .section-list__page .large-gold-bar {
+          height: 4vw; } }
+      .section-list .section-list__page .large-gold-bar:after {
+        background-color: #817246;
+        box-shadow: 0px -3px 2px -1px rgba(0, 22, 34, 0.4);
+        transform: skewY(2.3deg);
+        transform-origin: 100%;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1; }
+        @media screen and (min-width: 600px) {
+          .section-list .section-list__page .large-gold-bar:after {
+            height: 100%; } }
+
+.section-list {
+  overflow: hidden; }
+  .section-list.section-list--hero .section-list__page {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    color: #D5D5D5; }
+    @media screen and (min-width: 600px) {
+      .section-list.section-list--hero .section-list__page {
+        align-items: flex-start; } }
+    .section-list.section-list--hero .section-list__page .section-list__img {
+      width: 100%;
+      background-image: url("../img/slideshow/falcons.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 340px;
+      border: none; }
+      @media screen and (min-width: 500px) {
+        .section-list.section-list--hero .section-list__page .section-list__img {
+          height: 400px; } }
+      @media screen and (min-width: 600px) {
+        .section-list.section-list--hero .section-list__page .section-list__img {
+          border-right: none;
+          border-left: none; } }
+    .section-list.section-list--hero .section-list__page .hero__text {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      background-color: #001622;
+      padding: 0.9375rem;
+      border-bottom: 3px solid #580614;
+      z-index: 1; }
+      .section-list.section-list--hero .section-list__page .hero__text:before {
+        transform: skewY(2.3deg);
+        transform-origin: 100%;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        border-top: 3px solid #580614;
+        z-index: -1;
+        background-color: #001622; }
+        @media screen and (min-width: 600px) {
+          .section-list.section-list--hero .section-list__page .hero__text:before {
+            height: 100%; } }
+        @media screen and (min-width: 600px) {
+          .section-list.section-list--hero .section-list__page .hero__text:before {
+            display: none; } }
+      .section-list.section-list--hero .section-list__page .hero__text h1 {
+        font-size: 1.35rem;
+        margin-bottom: 0.23438rem;
+        font-weight: 800; }
+      .section-list.section-list--hero .section-list__page .hero__text p {
+        font-weight: 100;
+        font-size: 0.9rem; }
+      .section-list.section-list--hero .section-list__page .hero__text .hero__links {
+        text-transform: uppercase;
+        display: flex;
+        margin-top: 0.9375rem;
+        justify-content: space-around;
+        letter-spacing: 0.0rem;
+        font-size: 1.05rem;
+        font-weight: 800; }
+        .section-list.section-list--hero .section-list__page .hero__text .hero__links li {
+          padding-bottom: 2px;
+          border-bottom: 3px solid #A61931; }
+      @media screen and (min-width: 375px) {
+        .section-list.section-list--hero .section-list__page .hero__text {
+          padding: 1.40625rem; }
+          .section-list.section-list--hero .section-list__page .hero__text h1 {
+            font-size: 1.65rem; }
+          .section-list.section-list--hero .section-list__page .hero__text .hero__links {
+            font-size: 1.35rem; } }
+      @media screen and (min-width: 400px) {
+        .section-list.section-list--hero .section-list__page .hero__text {
+          padding: 1.17188rem 2.10938rem; } }
+      @media screen and (min-width: 500px) {
+        .section-list.section-list--hero .section-list__page .hero__text {
+          padding: 1.17188rem 2.57812rem; }
+          .section-list.section-list--hero .section-list__page .hero__text h1 {
+            font-size: 1.9rem; }
+          .section-list.section-list--hero .section-list__page .hero__text p {
+            font-size: 1.05rem; } }
+      @media screen and (min-width: 600px) {
+        .section-list.section-list--hero .section-list__page .hero__text {
+          padding: 0;
+          border: none; }
+          .section-list.section-list--hero .section-list__page .hero__text h1, .section-list.section-list--hero .section-list__page .hero__text p, .section-list.section-list--hero .section-list__page .hero__text .hero__links {
+            padding-left: 2.10938rem;
+            z-index: 3; }
+          .section-list.section-list--hero .section-list__page .hero__text h1 {
+            font-size: 1.35rem;
+            margin-bottom: 0.23438rem;
+            background-color: #001622;
+            width: 100%;
+            z-index: 3;
+            padding-top: 0.9375rem; }
+          .section-list.section-list--hero .section-list__page .hero__text .hero__links {
+            margin-top: 15px;
+            justify-content: flex-start;
+            font-size: 0.9rem;
+            padding-bottom: 0.9375rem;
+            border-bottom: 3px solid #580614; }
+            .section-list.section-list--hero .section-list__page .hero__text .hero__links li {
+              margin-right: 2.10938rem; }
+          .section-list.section-list--hero .section-list__page .hero__text .hero-tablet-angle {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 150%;
+            background-color: #001622;
+            z-index: 2;
+            border-top: 3px solid #580614;
+            top: -3px; }
+            .section-list.section-list--hero .section-list__page .hero__text .hero-tablet-angle:before {
+              transform: skewY(-23deg);
+              transform-origin: 100%;
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+              z-index: -1;
+              background-color: #001622;
+              z-index: -2;
+              transform-origin: 0;
+              margin-left: 53%;
+              border-top: 3px solid #580614; } }
+      @media screen and (min-width: 600px) and (min-width: 600px) {
+        .section-list.section-list--hero .section-list__page .hero__text .hero-tablet-angle:before {
+          height: 100%; } }
+
+.section-list.section-list--news {
+  align-items: center; }
+  .section-list.section-list--news li figure {
+    height: 70.04533333vw;
+    width: 77.73333333vw;
+    background-image: url("../img/stadiumfront.jpg");
+    background-size: cover; }
+    .section-list.section-list--news li figure h2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.9375rem;
+      text-align: center;
       height: 100%;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: #817246;
-      transform: skewY(2deg);
-      transform-origin: 100%;
-      z-index: -1; }
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.1);
+      color: #D5D5D5;
+      text-transform: capitalize;
+      font-size: 1.35rem;
+      text-shadow: 0 0 5px black;
+      line-height: 2rem;
+      font-weight: 500; }
+      @media screen and (min-width: 350px) {
+        .section-list.section-list--news li figure h2 {
+          font-size: 1.65rem; } }
+    @media screen and (min-width: 600px) {
+      .section-list.section-list--news li figure {
+        width: 27.99479167vw;
+        height: 47.52604167vw; } }
 
 .explore {
   display: flex;
-  flex-direction: column;
-  position: relative;
-  margin-top: 10%; }
-
-.headline-explore {
-  left: 3%; }
-  .headline-explore span {
-    background: #A61931;
-    padding: 2% 3%; }
-
-.explore__video {
-  width: 100%;
-  height: 50%; }
-
-.golden-div-2 {
-  width: 100%;
-  height: 30px;
-  position: relative;
-  background: #817246; }
-  @media screen and (min-width: 900px) {
-    .golden-div-2 {
-      height: 50px; } }
-  .golden-div-2:before {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: #817246;
-    transform: skewY(-2deg);
-    transform-origin: 0 100%;
-    z-index: 6; }
-
-.falcons {
-  margin-top: 200px;
-  height: 525px;
-  background: #D5D5D5;
-  display: flex;
   position: relative; }
-  @media screen and (min-width: 900px) {
-    .falcons {
-      display: none; } }
-  .falcons:before {
-    content: '';
-    display: block;
+  .explore video {
     width: 100%;
-    height: 40%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    background: #D5D5D5;
-    top: 0;
-    transform: skewY(-2deg) translateY(-40%);
-    transform-origin: 100%;
-    z-index: 6; }
-  .falcons .falcons__text {
-    width: 45%;
-    margin-left: 5%;
-    z-index: 10; }
-    .falcons .falcons__text p {
-      line-height: 1.5;
-      font-weight: 100;
-      margin-bottom: 2.5vh; }
-    .falcons .falcons__text .falcons__learn-button {
-      background: #A61931;
-      color: #FEFEFE;
-      font-weight: 100;
-      border: none;
-      border-radius: 0;
-      text-transform: uppercase;
-      margin-bottom: 5vh;
-      padding: 5%; }
-      @media screen and (min-width: 900px) {
-        .falcons .falcons__text .falcons__learn-button {
-          padding: 3% 4%; } }
-    .falcons .falcons__text .falcons__homegame {
-      font-size: .8rem;
-      color: #000;
-      border-left: 2px solid #A61931;
-      padding-left: 20px;
-      text-transform: uppercase;
-      margin-bottom: 1vh; }
-    .falcons .falcons__text .falcons__nextgame {
-      font-size: 2rem;
-      color: #A61931;
-      font-weight: bold;
-      margin-bottom: 2vh;
-      text-transform: uppercase; }
-    .falcons .falcons__text .falcons__gamedate {
-      color: #A61931;
-      font-size: .8rem;
-      font-weight: 100;
-      margin-bottom: 2.5vh; }
-    .falcons .falcons__text .falcons__gameday-button {
-      background: #000;
-      color: #FEFEFE;
-      padding: 5%;
-      border: none;
-      border-radius: 0;
-      text-transform: uppercase; }
-      @media screen and (min-width: 900px) {
-        .falcons .falcons__text .falcons__gameday-button {
-          padding: 3% 4%; } }
-  .falcons .mattryan {
-    background-image: url(../img/falcons-player-6.png);
-    background-repeat: no-repeat;
-    width: 70%;
-    height: 500px;
-    background-size: contain;
-    background-position: right;
-    top: 0;
-    right: -10%;
-    z-index: 10;
-    position: absolute; }
-    @media screen and (min-width: 500px) {
-      .falcons .mattryan {
-        right: -5%; } }
-    @media screen and (min-width: 900px) {
-      .falcons .mattryan {
-        right: 0%; } }
-
-.headline-falcons {
-  display: flex;
-  flex-direction: column;
-  left: 5%;
-  margin-top: -130px; }
-  .headline-falcons span {
-    background: #A61931;
-    padding: 4%; }
-  .headline-falcons .falcons-span {
-    font-size: 2.5rem;
-    color: #D5D5D5; }
-
-.united {
-  margin-top: 200px;
-  height: 525px;
-  background: #D5D5D5;
-  display: flex;
-  flex-direction: row-reverse;
-  position: relative; }
-  @media screen and (min-width: 900px) {
-    .united {
-      display: none; } }
-  .united:before {
-    content: '';
-    display: block;
+    height: 56.5%;
+    position: relative;
+    margin-bottom: -0.23438rem; }
+    @media screen and (min-width: 600px) {
+      .explore video {
+        height: 56.25vw; } }
+  .explore .large-gold-bar {
     width: 100%;
-    height: 40%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    background: #D5D5D5;
-    top: 0;
-    transform: skewY(2deg) translateY(-40%);
-    transform-origin: 100%;
-    z-index: 6; }
-  .united .united__text {
-    width: 45%;
-    margin-right: 5%;
-    z-index: 10;
-    text-align: right; }
-    .united .united__text p {
-      line-height: 1.5;
-      font-weight: 100;
-      margin-bottom: 2.5vh; }
-    .united .united__text .united__learn-button {
-      background: #817246;
-      color: #FEFEFE;
-      font-weight: 100;
-      border: none;
-      border-radius: 0;
-      text-transform: uppercase;
-      margin-bottom: 5vh;
-      padding: 5%; }
-      @media screen and (min-width: 900px) {
-        .united .united__text .united__learn-button {
-          padding: 3% 4%; } }
-    .united .united__text .united__homegame {
-      font-size: .8rem;
-      color: #000;
-      border-right: 2px solid #817246;
-      padding-right: 20px;
-      text-transform: uppercase;
-      margin-bottom: 1vh; }
-    .united .united__text .united__nextgame {
-      font-size: 2rem;
-      color: #817246;
-      font-weight: bold;
-      margin-bottom: 2vh;
-      text-transform: uppercase; }
-    .united .united__text .united__gamedate {
-      color: #817246;
-      font-size: .8rem;
-      font-weight: 100;
-      margin-bottom: 2.5vh; }
-    .united .united__text .united__gameday-button {
-      background: #000;
-      color: #FEFEFE;
-      padding: 5%;
-      border: none;
-      border-radius: 0;
-      text-transform: uppercase; }
-      @media screen and (min-width: 900px) {
-        .united .united__text .united__gameday-button {
-          padding: 3% 4%; } }
-  .united .hectorvillalba {
-    background-image: url(../img/united-player-3.png);
-    background-repeat: no-repeat;
-    width: 70%;
-    height: 500px;
-    background-size: contain;
-    background-position: left;
-    top: 0;
-    left: -10%;
-    z-index: 10;
-    position: absolute; }
-    @media screen and (min-width: 500px) {
-      .united .hectorvillalba {
-        left: -5%; } }
-    @media screen and (min-width: 900px) {
-      .united .hectorvillalba {
-        left: 0%; } }
-
-.headline-united {
-  display: flex;
-  flex-direction: column;
-  right: 5%;
-  margin-top: -130px; }
-  .headline-united span {
-    background: #817246;
-    padding: 4%;
-    text-align: right; }
-  .headline-united .united-atlanta-span {
-    color: #001622; }
-  .headline-united .united-span {
-    font-size: 2.5rem;
-    color: #D5D5D5; }
-
-.stadium__teams {
-  display: none;
-  position: relative; }
-  @media screen and (min-width: 900px) {
-    .stadium__teams {
-      margin: 0 auto;
-      margin-top: 10%;
-      display: flex;
-      min-height: 400px;
-      height: 100vh;
-      max-height: 600px; }
-      .stadium__teams .teams__background {
-        position: absolute;
-        z-index: 10;
-        background-image: url(../../assets/img/hourglass.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%;
-        height: 100%;
-        max-width: 1000px;
-        margin: 0 auto; } }
-  .stadium__teams .united-desktop {
-    display: none; }
-    @media screen and (min-width: 900px) {
-      .stadium__teams .united-desktop {
-        position: relative;
-        z-index: 11;
-        margin-top: 200px;
-        display: flex;
-        flex-direction: row-reverse;
-        align-items: center;
-        width: 50%; } }
-    .stadium__teams .united-desktop .united__text {
-      width: 45%;
-      margin-right: 5%;
-      z-index: 10;
-      text-align: right; }
-      .stadium__teams .united-desktop .united__text p {
-        line-height: 1.5;
-        font-weight: 100;
-        margin-bottom: 2.5vh; }
-      .stadium__teams .united-desktop .united__text .united__learn-button {
-        background: #817246;
-        color: #FEFEFE;
-        font-weight: 100;
-        border: none;
-        border-radius: 0;
-        text-transform: uppercase;
-        margin-bottom: 5vh;
-        padding: 5%; }
-        @media screen and (min-width: 900px) {
-          .stadium__teams .united-desktop .united__text .united__learn-button {
-            padding: 3% 4%; } }
-      .stadium__teams .united-desktop .united__text .united__homegame {
-        font-size: .8rem;
-        color: #000;
-        border-right: 2px solid #817246;
-        padding-right: 20px;
-        text-transform: uppercase;
-        margin-bottom: 1vh; }
-      .stadium__teams .united-desktop .united__text .united__nextgame {
-        font-size: 2rem;
-        color: #817246;
-        font-weight: bold;
-        margin-bottom: 2vh;
-        text-transform: uppercase; }
-      .stadium__teams .united-desktop .united__text .united__gamedate {
-        color: #817246;
-        font-size: .8rem;
-        font-weight: 100;
-        margin-bottom: 2.5vh; }
-      .stadium__teams .united-desktop .united__text .united__gameday-button {
-        background: #000;
-        color: #FEFEFE;
-        padding: 5%;
-        border: none;
-        border-radius: 0;
-        text-transform: uppercase; }
-        @media screen and (min-width: 900px) {
-          .stadium__teams .united-desktop .united__text .united__gameday-button {
-            padding: 3% 4%; } }
-    .stadium__teams .united-desktop .hectorvillalba {
-      background-image: url(../img/united-player-3.png);
-      background-repeat: no-repeat;
-      width: 70%;
-      height: 500px;
-      background-size: contain;
-      background-position: left;
+    height: 8vw;
+    background-color: #817246;
+    position: relative;
+    z-index: 2; }
+    @media screen and (min-width: 600px) {
+      .explore .large-gold-bar {
+        height: 4vw; } }
+    .explore .large-gold-bar:after {
+      background-color: #817246;
+      box-shadow: 0px -3px 2px -1px rgba(0, 22, 34, 0.4);
+      transform: skewY(2.3deg);
+      transform-origin: 100%;
+      content: '';
+      position: absolute;
       top: 0;
-      left: -10%;
-      z-index: 10;
-      position: absolute; }
-      @media screen and (min-width: 500px) {
-        .stadium__teams .united-desktop .hectorvillalba {
-          left: -5%; } }
-      @media screen and (min-width: 900px) {
-        .stadium__teams .united-desktop .hectorvillalba {
-          left: 0%; } }
-  .stadium__teams .headline-united {
-    display: flex;
-    flex-direction: column;
-    right: 5%;
-    margin-top: -300px; }
-    .stadium__teams .headline-united span {
-      background: #817246;
-      padding: 4%;
-      text-align: right; }
-    .stadium__teams .headline-united .united-atlanta-span {
-      color: #001622; }
-    .stadium__teams .headline-united .united-span {
-      font-size: 2.5rem;
-      color: #D5D5D5; }
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: -1; }
+      @media screen and (min-width: 600px) {
+        .explore .large-gold-bar:after {
+          height: 100%; } }
+  .explore .section-footer {
+    padding: 0; }
 
-.events {
+.teams {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 5rem;
   position: relative;
-  margin-top: 15%; }
-
-.headline-events {
-  top: 2%;
-  left: 3%; }
-  .headline-events span {
-    background: #A61931;
-    padding: 3% 4%; }
-
-.event__articles {
-  display: flex;
-  flex-direction: column; }
-  @media screen and (min-width: 900px) {
-    .event__articles {
-      flex-direction: row;
-      flex-wrap: wrap; } }
-  .event__articles .article {
+  color: #001622; }
+  .teams .teams-section {
+    background-color: #D5D5D5;
+    width: 100%;
+    position: relative;
     display: flex;
-    flex-direction: column; }
-    @media screen and (min-width: 900px) {
-      .event__articles .article {
-        width: 50%; } }
-    .event__articles .article .event__article {
+    flex-wrap: wrap;
+    min-height: 100vw;
+    background-size: auto 95%;
+    background-repeat: no-repeat;
+    justify-content: flex-start;
+    padding: 0 0.9375rem; }
+    @media screen and (min-width: 600px) {
+      .teams .teams-section {
+        background-size: auto 61vw; } }
+    .teams .teams-section h2 {
+      display: flex;
+      text-transform: uppercase;
+      color: #D5D5D5;
+      padding: 0.46875rem;
+      padding-top: 0.9375rem;
+      width: 100%;
+      margin-top: -3.16406rem;
+      position: absolute; }
+      .teams .teams-section h2 div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0.9rem 0.6rem 0.5rem 0.65rem;
+        min-width: 8.5rem;
+        box-shadow: 1px 1px 3px #001622;
+        color: #001622;
+        letter-spacing: 0.1rem;
+        font-size: 0.9rem; }
+        .teams .teams-section h2 div .teams-header {
+          font-size: 1.35rem;
+          font-weight: 800;
+          color: #D5D5D5;
+          letter-spacing: 0.2rem;
+          margin-top: 0.23438rem; }
+        @media screen and (min-width: 450px) {
+          .teams .teams-section h2 div {
+            font-size: 1.05rem;
+            min-width: 9.7rem; }
+            .teams .teams-section h2 div .teams-header {
+              font-size: 1.65rem; } }
+    .teams .teams-section .teams-text {
+      width: 52%;
+      font-size: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-top: 3.16406rem; }
+      .teams .teams-section .teams-text li {
+        margin-bottom: 2.10938rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; }
+        .teams .teams-section .teams-text li p {
+          line-height: 1.55rem; }
+        .teams .teams-section .teams-text li button {
+          text-transform: uppercase;
+          color: #D5D5D5;
+          padding: 0.7rem;
+          padding-top: 0.9rem;
+          padding-bottom: 0.5rem;
+          font-size: 1.2rem;
+          border-radius: 5px;
+          box-shadow: 1px 1px 3px #001622; }
+        .teams .teams-section .teams-text li div {
+          display: flex;
+          flex-direction: column;
+          margin-top: 0.46875rem; }
+          .teams .teams-section .teams-text li div p {
+            font-size: 1.2rem;
+            font-style: italic;
+            font-weight: 800;
+            padding: 0 0.1rem; }
+        .teams .teams-section .teams-text li h3 {
+          display: flex;
+          flex-direction: column; }
+          .teams .teams-section .teams-text li h3 span, .teams .teams-section .teams-text li h3 date {
+            text-transform: uppercase; }
+          .teams .teams-section .teams-text li h3 span {
+            font-size: 0.9rem;
+            margin-bottom: 0.23438rem; }
+            .teams .teams-section .teams-text li h3 span:first-child {
+              padding: 0.1rem;
+              padding-top: 0.25rem;
+              padding-bottom: 0;
+              margin-bottom: 0.46875rem;
+              height: 1.05rem; }
+            .teams .teams-section .teams-text li h3 span:nth-child(2) {
+              font-size: 2.925rem;
+              font-weight: 800;
+              margin-bottom: 0; }
+          .teams .teams-section .teams-text li h3 date {
+            font-size: 0.75rem; }
+        .teams .teams-section .teams-text li:last-child button {
+          background-color: #001622;
+          color: #D5D5D5;
+          font-size: 1.05rem;
+          margin-top: 0.9375rem;
+          box-shadow: 1px 1px 3px #001622; }
+      @media screen and (min-width: 450px) {
+        .teams .teams-section .teams-text {
+          font-size: 1.05rem; }
+          .teams .teams-section .teams-text li button {
+            font-size: 1.35rem; }
+          .teams .teams-section .teams-text li div {
+            margin-top: 0.9375rem; }
+            .teams .teams-section .teams-text li div p {
+              font-size: 1.35rem; }
+          .teams .teams-section .teams-text li:last-child button {
+            font-size: 1.2rem; } }
+    .teams .teams-section:before {
+      background-color: #D5D5D5; }
+    .teams .teams-section.teams-section__falcons {
+      margin-bottom: 5rem;
+      background-image: url("../img/hero_img_1.png");
+      background-position: 95% center;
+      flex-direction: row; }
+      .teams .teams-section.teams-section__falcons h2 {
+        flex-direction: row; }
+        .teams .teams-section.teams-section__falcons h2 div {
+          background-color: #A61931; }
+      .teams .teams-section.teams-section__falcons .teams-text li {
+        align-items: flex-start; }
+        .teams .teams-section.teams-section__falcons .teams-text li div {
+          align-items: flex-start; }
+          .teams .teams-section.teams-section__falcons .teams-text li div button {
+            background-color: #A61931; }
+        .teams .teams-section.teams-section__falcons .teams-text li h3 {
+          align-items: flex-start; }
+          .teams .teams-section.teams-section__falcons .teams-text li h3 span:first-child {
+            border-left: 3px solid #A61931;
+            padding-left: 0.9375rem; }
+          .teams .teams-section.teams-section__falcons .teams-text li h3 span:nth-child(2) {
+            color: #A61931; }
+          .teams .teams-section.teams-section__falcons .teams-text li h3 date {
+            color: #A61931; }
+      .teams .teams-section.teams-section__falcons:before {
+        transform: skewY(-3deg);
+        transform-origin: 100%;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        transform-origin: 0; }
+        @media screen and (min-width: 600px) {
+          .teams .teams-section.teams-section__falcons:before {
+            height: 100%; } }
+    .teams .teams-section.teams-section__united {
+      background-image: url("../img/hero_img_2.png");
+      background-position: 5% center;
+      flex-direction: row-reverse; }
+      .teams .teams-section.teams-section__united h2 {
+        flex-direction: row-reverse; }
+        .teams .teams-section.teams-section__united h2 div {
+          background-color: #817246;
+          align-items: flex-end; }
+      .teams .teams-section.teams-section__united .teams-text li {
+        align-items: flex-end;
+        text-align: right; }
+        .teams .teams-section.teams-section__united .teams-text li div {
+          align-items: flex-end; }
+          .teams .teams-section.teams-section__united .teams-text li div button {
+            background-color: #817246; }
+        .teams .teams-section.teams-section__united .teams-text li h3 span:first-child {
+          border-right: 3px solid #817246;
+          padding-right: 0.9375rem; }
+        .teams .teams-section.teams-section__united .teams-text li h3 span:nth-child(2) {
+          color: #817246; }
+        .teams .teams-section.teams-section__united .teams-text li h3 date {
+          color: #817246; }
+      .teams .teams-section.teams-section__united:before {
+        transform: skewY(3deg);
+        transform-origin: 100%;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1; }
+        @media screen and (min-width: 600px) {
+          .teams .teams-section.teams-section__united:before {
+            height: 100%; } }
+    @media screen and (min-width: 450px) {
+      .teams .teams-section {
+        min-height: 120vw;
+        padding: 0 1.51875rem; } }
+  @media screen and (min-width: 600px) {
+    .teams {
+      flex-direction: row-reverse;
+      background-image: url("../img/hourglass.svg");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      width: 80%;
-      height: 200px;
-      position: relative;
-      margin: 10%;
-      margin-top: 30px;
-      padding: 20% 20px;
-      border: 2px solid #580614; }
-    .event__articles .article .event__article1 {
-      background-image: url(../img/stadiumwithfalcon.jpg); }
-    .event__articles .article .event__article2 {
-      background-image: url(../img/KennyChesney.jpg); }
-    .event__articles .article .event__article3 {
-      background-image: url(../img/stadiumfront.jpg); }
-    .event__articles .article .event__article4 {
-      background-image: url(../img/GraveDigger.jpg); }
-    .event__articles .article .golden-div {
-      width: 82%;
-      position: relative;
-      z-index: 7;
-      background: #817246;
+      height: 700px;
+      justify-content: space-between; }
+      .teams .teams-section {
+        width: 50%;
+        min-height: 0;
+        height: 100%;
+        background-color: transparent;
+        padding: 0 0.9375rem; }
+        .teams .teams-section:before {
+          display: none; }
+        .teams .teams-section .teams-text {
+          justify-content: center;
+          height: 100%;
+          padding: 0;
+          padding-bottom: 3.16406rem; }
+          .teams .teams-section .teams-text li {
+            margin-bottom: 150px; }
+            .teams .teams-section .teams-text li .main-copy {
+              min-height: 12rem;
+              min-width: 12rem;
+              max-width: 16.9rem; }
+        .teams .teams-section.teams-section__falcons {
+          background-size: auto 30rem;
+          background-position: 118% 80%; }
+        .teams .teams-section.teams-section__united {
+          background-size: auto 28.44rem;
+          background-position: -9% 80%; } }
+  @media screen and (min-width: 600px) and (min-width: 760px) {
+    .teams {
+      height: 800px; } }
+
+.section-list.section-list--events {
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 0.23438rem; }
+  .section-list.section-list--events li {
+    position: relative; }
+    .section-list.section-list--events li figure {
+      height: 58vw;
+      width: 47vw;
+      background-size: auto 110%;
+      background-position: top center;
+      color: #FEFEFE;
+      text-shadow: 0 0 2px #001622;
+      text-transform: uppercase;
+      font-weight: 800; }
+      @media screen and (min-width: 600px) {
+        .section-list.section-list--events li figure {
+          height: 31.51041667vw;
+          width: 31.51041667vw; } }
+    .section-list.section-list--events li .small-gold-bar {
+      margin-bottom: 0.9375rem;
+      z-index: 3;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      flex-wrap: wrap;
       color: #D5D5D5;
-      margin-top: -12%;
-      margin-left: 9%;
-      padding: 2% 3%; }
-      .event__articles .article .golden-div h2 {
-        font-size: 1rem;
-        font-weight: bold;
-        margin-bottom: 10px; }
-      .event__articles .article .golden-div p {
-        font-size: .8rem; }
-      .event__articles .article .golden-div:before {
-        content: '';
-        display: block;
-        position: absolute;
+      text-transform: capitalize; }
+      .section-list.section-list--events li .small-gold-bar h2, .section-list.section-list--events li .small-gold-bar date {
         width: 100%;
         height: 100%;
+        background-color: #817246;
+        padding: 0.46875rem; }
+      .section-list.section-list--events li .small-gold-bar date {
+        font-size: 0.75rem;
+        padding-top: 0; }
+      .section-list.section-list--events li .small-gold-bar h2 {
+        font-size: 1.05rem; }
+    .section-list.section-list--events li:nth-child(even) .small-gold-bar {
+      text-align: right;
+      background-color: #817246;
+      width: 48vw;
+      position: relative; }
+      @media screen and (min-width: 600px) {
+        .section-list.section-list--events li:nth-child(even) .small-gold-bar {
+          width: 32vw; } }
+      .section-list.section-list--events li:nth-child(even) .small-gold-bar:after {
+        transform: skewY(-3deg);
+        transform-origin: 100%;
+        content: '';
+        position: absolute;
         top: 0;
         left: 0;
+        bottom: 0;
         right: 0;
-        background: #817246;
-        transform: skewY(2deg);
+        z-index: -1;
+        background-color: #817246;
+        box-shadow: 0px -3px 5px 0px rgba(0, 22, 34, 0.2);
+        z-index: -1;
+        height: 90%;
+        width: 48vw; }
+        @media screen and (min-width: 600px) {
+          .section-list.section-list--events li:nth-child(even) .small-gold-bar:after {
+            height: 100%; } }
+      .section-list.section-list--events li:nth-child(even) .small-gold-bar:after {
+        transform-origin: 0; }
+    .section-list.section-list--events li:nth-child(odd) .small-gold-bar {
+      background-color: #817246;
+      width: 48vw;
+      position: relative; }
+      @media screen and (min-width: 600px) {
+        .section-list.section-list--events li:nth-child(odd) .small-gold-bar {
+          width: 32vw; } }
+      .section-list.section-list--events li:nth-child(odd) .small-gold-bar:after {
+        transform: skewY(3deg);
         transform-origin: 100%;
-        z-index: -1; }
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        background-color: #817246;
+        box-shadow: 0px -3px 5px 0px rgba(0, 22, 34, 0.2);
+        z-index: -1;
+        height: 90%;
+        width: 48vw; }
+        @media screen and (min-width: 600px) {
+          .section-list.section-list--events li:nth-child(odd) .small-gold-bar:after {
+            height: 100%; } }
+    .section-list.section-list--events li:first-child figure {
+      background-image: url("../img/stadiumwithfalcon.jpg"); }
+    .section-list.section-list--events li:nth-child(2) figure {
+      background-image: url("../img/KennyChesney.jpg"); }
+    .section-list.section-list--events li:nth-child(3) figure {
+      background-image: url("../img/stadiumfront.jpg"); }
+    .section-list.section-list--events li:last-child figure {
+      background-image: url("../img/GraveDigger.jpg"); }
 
-footer {
-  background: #001622;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-transform: uppercase;
-  color: #FEFEFE;
-  margin-top: 15%;
-  padding: 15% 10%;
-  position: relative; }
-  footer:before {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: -5px;
-    left: 0;
-    right: 0;
-    background: #001622;
-    transform: skewY(2deg);
-    transform-origin: 100%;
-    z-index: -1;
-    border-top: 3px solid #580614; }
-  @media screen and (min-width: 630px) {
-    footer {
-      padding: 5% 10%; } }
-  footer .footer__text {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; }
-    @media screen and (min-width: 630px) {
-      footer .footer__text {
-        flex-direction: row;
-        align-items: flex-start;
-        flex-wrap: flex-wrap; } }
-    footer .footer__text a {
-      text-decoration: none;
-      font-size: .8rem;
-      color: #FEFEFE; }
-    footer .footer__text .mbs-logo__footer {
-      background-image: url(../../assets/img/mbs-logo.svg);
-      background-repeat: no-repeat;
-      width: 40%;
-      height: 120px; }
-      @media screen and (min-width: 630px) {
-        footer .footer__text .mbs-logo__footer {
-          width: 20%; } }
-    footer .footer__text .sitemap,
-    footer .footer__text .teams,
-    footer .footer__text .social-media {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 2rem;
-      letter-spacing: 1px;
-      line-height: 1.5; }
-      @media screen and (min-width: 630px) {
-        footer .footer__text .sitemap,
-        footer .footer__text .teams,
-        footer .footer__text .social-media {
-          width: 25%; } }
-      footer .footer__text .sitemap li,
-      footer .footer__text .teams li,
-      footer .footer__text .social-media li {
-        width: 100%;
-        text-align: center; }
-      footer .footer__text .sitemap h3,
-      footer .footer__text .teams h3,
-      footer .footer__text .social-media h3 {
-        z-index: 5;
-        margin-bottom: 1.5rem;
-        font-weight: bold; }
-      footer .footer__text .sitemap span,
-      footer .footer__text .teams span,
-      footer .footer__text .social-media span {
-        margin-right: 2%; }
-  footer .copyright {
-    font-size: .6rem; }
-
-* {
-  box-sizing: border-box; }
-
-body {
-  background: #003950;
-  font-family: 'Korolev Light'; }
-
-.inside {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #FEFEFE; }
-  .inside h2 {
-    font-size: 2em;
-    margin-bottom: 1rem; }
-  .inside span {
-    font-size: 1.5rem;
-    margin-bottom: 1rem; }
-  .inside video {
-    width: 100%; }
-
-.bigM {
-  background-image: url(../../assets/img/BigM.png);
-  background-repeat: no-repeat;
-  width: 200%;
-  padding-bottom: 500px;
-  height: 0;
-  position: absolute;
-  margin-top: 5%;
-  left: -60%; }
-
-.halfM {
-  background-image: url(../../assets/img/m_half_blue.svg);
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  left: -70%;
-  margin-top: 7%; }
-
-.headline {
-  font-size: 1.5625rem;
-  color: #D5D5D5;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  position: absolute;
-  transform: rotate(-5deg);
-  z-index: 5; }
-
-.teams-headline {
-  font-size: 1.4375rem;
-  color: #580614;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  position: absolute;
-  z-index: 10;
-  font-weight: bold; }
-
-.explore-video-button {
-  position: absolute;
-  right: 5%;
-  bottom: 5%;
-  z-index: 6;
-  transform: rotate(0deg);
-  font-size: 1.3rem; }
-  .explore-video-button span {
-    background: #A61931;
-    padding: 3%; }
-  @media screen and (min-width: 900px) {
-    .explore-video-button {
-      right: 2%; } }
-
-.background__styles {
-  width: 100%;
-  height: 100vh;
-  position: relative; }
-  .background__styles .letterM1 {
-    position: absolute;
-    background-image: url(../../assets/img/m_whole_black.svg);
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    border-top: 10px solid #001622;
-    border-bottom: 10px solid #001622; }
-
-#background {
-  position: absolute;
-  top: 800px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center; }
-  #background figure {
-    width: 100vw;
-    border-width: 5.333333333vh;
-    border-style: solid;
-    background-size: auto 100%; }
-    #background figure .dark-blue {
-      background-color: #001622;
-      border-color: #001622; }
-      #background figure .dark-blue.vertical {
-        background-position: center right -7.530120482vw;
-        background-image: url(../../assets/img/m_whole_black.svg); }
-      #background figure .dark-blue.horizontal {
-        background-image: url(../../assets/img/m_half_black.svg); }
-    #background figure .light-blue {
-      background-color: #003950;
-      border-color: #003950; }
-      #background figure .light-blue.vertical {
-        background-position: center left -7.530120482vw;
-        background-image: url(../../assets/img/m_whole_blue.svg); }
-      #background figure .light-blue.horizontal {
-        background-image: url(../../assets/img/m_half_blue.svg); }
-    #background figure .vertical {
-      height: 89.90963855vh; }
-    #background figure .horizontal {
-      height: 48.45331325vh; }
+main {
+  position: relative;
+  padding-bottom: 3.16406rem; }
 
 /*# sourceMappingURL=main.css.map */
